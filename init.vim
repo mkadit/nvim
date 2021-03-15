@@ -1,4 +1,3 @@
-
 "___  ___ _   __  ___      _ _ _
 "|  \/  || | / / / _ \    | (_) |
 "| .  . || |/ / / /_\ \ __| |_| |_
@@ -8,7 +7,6 @@
 
 source ~/.config/nvim/plugin.vim
 source ~/.config/nvim/general.vim
-source ~/.config/nvim/lightline.vim
 source ~/.config/nvim/startify.vim
 
 """ autocomp
@@ -35,10 +33,16 @@ luafile ~/.config/nvim/lua/plugins/nvim-lspconfig.lua
 luafile ~/.config/nvim/lua/plugins/telescope-config.lua
 luafile ~/.config/nvim/lua/plugins/telescope-map.lua
 luafile ~/.config/nvim/lua/plugins/treesitter-config.lua
+luafile ~/.config/nvim/lua/plugins/galaxyline-config.lua
+luafile ~/.config/nvim/lua/plugins/barbar-config.lua
+luafile ~/.config/nvim/lua/plugins/nvimTree.lua
+
+let g:vista_default_executive = 'nvim_lsp'
 let g:python3_host_prog = expand('/usr/bin/python3.9')
 if has('nvim-0.5')
   augroup lsp
     au!
     au FileType java lua require('jdtls').start_or_attach({cmd = {'java-lsp.sh'}})
+    nnoremap ga <Cmd>lua require('jdtls').code_action()<CR>
   augroup end
 endif

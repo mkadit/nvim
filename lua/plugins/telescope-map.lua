@@ -17,6 +17,7 @@ local function set_keybindings()
         {'n', '<Leader>fh', '<CMD>lua require("telescope.builtin").oldfiles()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fr', '<CMD>lua require("telescope.builtin").live_grep()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fp', '<CMD>lua require("telescope").extensions.project.project{}<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>fm', '<CMD>lua require("telescope").extensions.media_files.media_files()<CR>', {noremap = true, silent = false}},
 
         -- fugitive
 
@@ -28,6 +29,8 @@ local function set_keybindings()
         {'n', '<Leader>gk', '<CMD>diffget //3<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gg', '<CMD>Flogsplit<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>n', '<CMD>Fern . -drawer -toggle -reveal=%<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>t', '<CMD>Vista!!<CR>', {noremap = true, silent = false}},
+        -- {'n', '<Leader>n', '<CMD>NvimTreeToggle<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>eh', '<CMD>Cheat<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>vi', '<CMD>Vifm<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>rd', '<CMD>lcd %:p:h<CR>', {noremap = true, silent = false}},

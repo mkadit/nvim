@@ -12,8 +12,14 @@ let g:mapleader=" "
 """"""""""""""""""""""""""""""""""""""""""""""
 " General Settings
 """"""""""""""""""""""""""""""""""""""""""""""
-colorscheme gruvbox-material
 syntax enable
+filetype plugin indent on
+if has('termguicolors')
+  set termguicolors
+  " hi LineNr ctermbg=NONE guibg=NONE
+endif
+
+colorscheme sonokai
 set nocompatible
 set t_ut=
 set ttyfast
@@ -64,7 +70,7 @@ set mouse=a
 
 " show special characters
 set list
-set listchars=tab:›\ ,nbsp:␣,trail:•,extends:»,precedes:«
+set listchars=tab:›\ ,nbsp:␣,trail:•,extends:»,precedes:«,eol:↲
 set fillchars+=vert:│
 
 " highlight all search matches

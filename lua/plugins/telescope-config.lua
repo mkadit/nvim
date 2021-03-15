@@ -23,8 +23,8 @@ require('telescope').setup{
       '--smart-case'
     },
     prompt_position = "bottom",
-    prompt_prefix = "> ",
-    selection_caret = "> ",
+    prompt_prefix = "❱❱ ",
+    selection_caret = "❱ ",
     entry_prefix = "  ",
     initial_mode = "insert",
     selection_strategy = "reset",
@@ -51,7 +51,7 @@ require('telescope').setup{
     borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
     color_devicons = true,
     use_less = true,
-    set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
+    -- set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
@@ -60,4 +60,4 @@ require('telescope').setup{
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
   }
 }
-require('telescope').load_extension('fzy_native', 'project')
+require('telescope').load_extension('fzy_native', 'project', 'media_files')

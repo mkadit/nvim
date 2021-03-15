@@ -25,6 +25,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-project.nvim'
+Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -39,22 +40,26 @@ Plug 'vifm/vifm.vim'
 "Plug 'michaeljsmith/vim-indent-object'
 
  " { Aesthetics }
-Plug 'itchyny/lightline.vim'
-Plug 'mengelbrecht/lightline-bufferline'
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'romgrk/barbar.nvim'
+Plug 'liuchengxu/vista.vim'
+
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lambdalisue/nerdfont.vim'
-Plug 'sainnhe/gruvbox-material'
-" Plug 'sainnhe/sonokai'
+Plug 'sainnhe/sonokai'
+" Plug 'sainnhe/gruvbox-material'
 " Plug 'sainnhe/edge'
 " Plug 'sainnhe/forest-night'
 " Plug 'mhartington/oceanic-next'
-"
+" Plug 'kyazdani42/nvim-tree.lua'
+
 " {fern}
 Plug 'https://github.com/lambdalisue/fern.vim'
 Plug 'https://github.com/antoinemadec/FixCursorHold.nvim'
 Plug 'https://github.com/lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'https://github.com/LumaKernel/fern-mapping-fzf.vim'
-" Plug 'https://gthub.com/lambdalisue/fern-hijack.vim'
-
+Plug 'https://gthub.com/lambdalisue/fern-hijack.vim'
+" Plug 'liuchengxu/vim-which-key'
 
 " { Just in case }
 Plug 'dstein64/vim-startuptime'
