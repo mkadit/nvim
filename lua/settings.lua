@@ -49,7 +49,9 @@ local options = {
     linebreak      = true,
     linespace      = 0,
     list           = true,
-    listchars      = {tab='»-»',nbsp='␣',trail='•',extends='»',precedes='«',eol='↲'},
+    -- listchars      = {tab='»-»',nbsp='␣',trail='•',extends='»',precedes='«',eol='↲'},
+    -- listchars      = 'eol:↲\,tab:» ',
+    -- listchars      = 'eol:↲' .. 'tab:» ',
     mouse          = 'a',
     number         = true,
     pumblend       = 10,
@@ -95,5 +97,8 @@ setOptions(options)
 
 vim.cmd('syntax on')
 vim.cmd('colorscheme sonokai')
+vim.api.nvim_exec([[
+set listchars=tab:»\ ,nbsp:␣,trail:•,extends:»,precedes:«,eol:↲
+]], false)
 
 vim.g.python3_host_prog = '/usr/bin/python3.9'
