@@ -29,31 +29,31 @@ local function set_keybindings()
         {'n', '<Leader>sl', ':SessionLoad<Space>', {noremap = true, silent = true}},
         {'n', '<Leader>sc', '<CMD>Dashboard<CR>', {noremap = true, silent = true}}, ]]
 
+        {'n', '<Leader>ss', ':SSave<Space>', {noremap = true, silent = true}},
+        {'n', '<Leader>sl', ':SLoad<Space>', {noremap = true, silent = true}},
+        {'n', '<Leader>sc', '<CMD>SClose<CR>', {noremap = true, silent = true}},
+
         -- Buffers
-        {'n', '<A-l>', '<CMD>BufferNext<CR>', {noremap = true, silent = true}},
-        {'n', '<A-h>', '<CMD>BufferPrevious<CR>', {noremap = true, silent = true}},
-        {'n', '<A-L>', '<CMD>BufferMovePrevious<CR>', {noremap = true, silent = true}},
-        {'n', '<A-H>', '<CMD>BufferMoveNext<CR>', {noremap = true, silent = true}},
+        {'n', '<TAB>', '<CMD>BufferNext<CR>', {noremap = true, silent = true}},
+        {'n', '<S-TAB>', '<CMD>BufferPrevious<CR>', {noremap = true, silent = true}},
+        --[[ {'n', '<C-TAB>', '<CMD>BufferMovePrevious<CR>', {noremap = true, silent = true}},
+        {'n', '<C-S-TAB>', '<CMD>BufferMoveNext<CR>', {noremap = true, silent = true}}, ]]
         {'n', '<Leader>qd', '<CMD>BufferClose<CR>', {noremap = true, silent = true}},
         {'n', '<Leader>qq', '<CMD>bufdo BufferClose<CR>', {noremap = true, silent = true}},
         {'n', '<Leader>qa', '<CMD>bufdo BufferClose!<CR>', {noremap = true, silent = true}},
         {'n', '<Leader>qo', '<CMD>BufferCloseAllButCurrent<CR>', {noremap = true, silent = true}},
         {'n', '<A-0>', '<CMD>BufferLast<CR>', {noremap = true, silent = true}},
 
-        -- line bubbling
-        {'n', '<A-j>', ']e', {noremap = false, silent = true}},
-        {'n', '<A-k>', '[e', {noremap = false, silent = true}},
-
         -- split window
-        {'n', '<C-A-k>', '<C-w>t<C-w>K', {noremap = false, silent = true}},
-        {'n', '<C-A-h>', '<C-w>t<C-w>H', {noremap = false, silent = true}},
+        --[[ {'n', '<C-A-k>', '<C-w>t<C-w>K', {noremap = false, silent = true}},
+        {'n', '<C-A-h>', '<C-w>t<C-w>H', {noremap = false, silent = true}}, ]]
 
         -- terminal mode
         {'t', '<Esc>', '<C-\\><C-n>', {noremap = true, silent = true}},
 
         -- nvim tree.lua
-        --[[ {'n', '`', '<CMD>NvimTreeToggle<CR>', {noremap = true, silent = false}},
-        {'n', '<A-`>', '<CMD>NvimTreeFindFile<CR>', {noremap = true, silent = false}}, ]]
+        -- {'n', '`', '<CMD>NvimTreeToggle<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>n', '<CMD>NvimTreeFindFile<CR>', {noremap = true, silent = false}},
 
         -- code formatter
         --[[ {'n', '<Leader>f', '<CMD>FormatWrite<CR>', {noremap = false, silent = false}},
@@ -83,7 +83,7 @@ local function set_keybindings()
         {'n', '<Leader>gj', '<CMD>diffget //2<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gk', '<CMD>diffget //3<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gg', '<CMD>Flogsplit<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>n', '<CMD>Fern . -drawer -toggle -reveal=%<CR>', {noremap = true, silent = false}},
+        -- {'n', '<Leader>n', '<CMD>Fern . -drawer -toggle -reveal=%<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>t', '<CMD>Vista!!<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>eh', '<CMD>Cheat<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>vi', '<CMD>Vifm<CR>', {noremap = true, silent = false}},

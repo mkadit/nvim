@@ -32,6 +32,8 @@ packer.startup(function()
 
     -- File Manager
     use 'vifm/vifm.vim'
+        
+    
 
     -- Telescope
     use {
@@ -51,6 +53,7 @@ packer.startup(function()
         'neovim/nvim-lspconfig',
         requires = {
             'glepnir/lspsaga.nvim',
+			'onsails/lspkind-nvim',
         }
     }
     use {
@@ -58,17 +61,26 @@ packer.startup(function()
       requires = {
         { "hrsh7th/vim-vsnip", "hrsh7th/vim-vsnip-integ" }, -- integration with vim-vsnip
       },
-    } -- completi
+    } 
+
+    -- completion
     use { "mfussenegger/nvim-jdtls"}
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
+    -- formatter
+    -- use 'mhartington/formatter.nvim'
+	use 'sbdchd/neoformat'
+
+    -- tree explorer
+    use {'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons'}}
 	  -- fern
     use {
         'lambdalisue/fern.vim',
         requires = {
-							use 'https://github.com/antoinemadec/FixCursorHold.nvim',
-							use 'https://github.com/lambdalisue/fern-renderer-nerdfont.vim',
-							use 'https://github.com/LumaKernel/fern-mapping-fzf.vim',
+							'https://github.com/antoinemadec/FixCursorHold.nvim',
+							'https://github.com/lambdalisue/fern-renderer-nerdfont.vim',
+							'https://github.com/LumaKernel/fern-mapping-fzf.vim',
+                            'kyazdani42/nvim-web-devicons'
 
         }
     }

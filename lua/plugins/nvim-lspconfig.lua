@@ -1,6 +1,5 @@
 local nvim_lsp = require('lspconfig')
 local saga = require('lspsaga')
-local prt  = require('vim.lsp.protocol')
 
 local opt = {
     -- error_sign              = ' ',
@@ -16,11 +15,13 @@ local opt = {
 }
 
 saga.init_lsp_saga(opt)
+require('lspkind').init({})
 
 
 local capability = vim.lsp.protocol.make_client_capabilities()
 capability.textDocument.completion.completionItem.snippetSupport = true
--- Use a loop to conveniently both setup defined servers 
+
+-- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
 local servers = { "bashls", "clangd"}
 for _, lsp in ipairs(servers) do
@@ -38,7 +39,8 @@ nvim_lsp.gopls.setup {
       },
     },
     filetypes = { "go", "gomod" },
-    root_dir = function() return vim.loop.cwd() end
+    root_dir = function() return vim.loop.cwd() end,
+    capabilities = capability
     --[[ root_dir = function(fname)
     return util.root_pattern(".git", 'go.mod')(fname) or
       util.path.dirname(fname)
@@ -47,11 +49,14 @@ nvim_lsp.gopls.setup {
 }
 
 nvim_lsp.pyright.setup {
-        root_dir = function() return vim.loop.cwd() end
+        root_dir = function() return vim.loop.cwd() end,
+        capabilities = capability
+
 
 }
 nvim_lsp.rust_analyzer.setup({
     on_attach=on_attach,
+    capabilities = capability,
     settings = {
         ["rust-analyzer"] = {
             assist = {
@@ -97,6 +102,23 @@ require'lspconfig'.sumneko_lua.setup {
     }
 }
 
+--[[ require"lspconfig".efm.setup {
+    init_options = {documentFormatting = true},
+    filetypes = {"lua"},
+    settings = {
+        rootMarkers = {".git/"},
+        languages = {
+            lua = {
+                {
+                    formatCommand = "lua-format -i --no-keep-simple-function-one-line --no-break-after-operator --column-limit=150 --break-after-table-lb",
+                    formatStdin = true
+                }
+            }
+        }
+    }
+} ]]
+
+
 local keymap = vim.api.nvim_set_keymap
 function _G.show_documentation()
     if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
@@ -131,3 +153,13 @@ local opts = { noremap=true, silent=true }
   keymap('n', 'rf', '<CMD>lua vim.lsp.buf.formatting()<CR>',      { noremap = true, silent = true})
   keymap('n', '<leader>p',        '<CMD>lua require("lspsaga.provider").lsp_finder()<CR>',                       { noremap = true, silent = true})
 
+vim.api.nvim_exec([[
+if has('nvim-0.5')
+  augroup lsp
+    au!
+    au FileType java lua require('jdtls').start_or_attach({cmd = {'java-lsp.sh'}})
+    nnoremap ga <Cmd>lua require('jdtls').code_action()<CR>
+  augroup end
+endif
+
+]], false)

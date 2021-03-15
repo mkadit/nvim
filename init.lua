@@ -13,7 +13,11 @@ require('plugins.galaxyline-config')
 require('plugins.nvim-lspconfig')
 require('plugins.telescope-config')
 require('plugins.treesitter-config')
-
+require('plugins.startify')
+require('plugins.nvimTree')
+vim.api.nvim_exec([[
+source ~/.config/nvim/startify.vim
+]], false)
 
 -- Mappings
 require('mappings')
