@@ -76,6 +76,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/nerdfont.vim"
   },
+  ["neuron.nvim"] = {
+    loaded = true,
+    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/neuron.nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
@@ -208,10 +212,6 @@ _G.packer_plugins = {
   ["vista.vim"] = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/vista.vim"
-  },
-  ["vscode-Java-Snippets"] = {
-    loaded = true,
-    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/vscode-Java-Snippets"
   }
 }
 

@@ -2,14 +2,10 @@ vim.cmd('packadd packer.nvim')
 
 local packer = require('packer')
 
-packer.init({
-    display = {
-        open_cmd = 'leftabove 80vnew [packer]',
-    }
-})
+packer.init({display = {open_cmd = 'leftabove 80vnew [packer]'}})
 
 packer.startup(function()
-    use { 'wbthomason/packer.nvim', opt = true }
+    use {'wbthomason/packer.nvim', opt = true}
 
     -- Git
     use 'tpope/vim-fugitive'
@@ -32,18 +28,15 @@ packer.startup(function()
 
     -- File Manager
     use 'vifm/vifm.vim'
-        
-    
 
     -- Telescope
     use {
         'nvim-telescope/telescope.nvim',
         requires = {
-            'nvim-lua/popup.nvim',
-            'nvim-lua/plenary.nvim',
+            'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-fzy-native.nvim',
             'nvim-telescope/telescope-project.nvim',
-            'nvim-telescope/telescope-media-files.nvim',
+            'nvim-telescope/telescope-media-files.nvim'
 
         }
     }
@@ -51,43 +44,45 @@ packer.startup(function()
     -- nvim-lsp
     use {
         'neovim/nvim-lspconfig',
-        requires = {
-            'glepnir/lspsaga.nvim',
-			'onsails/lspkind-nvim',
-        }
+        requires = {'glepnir/lspsaga.nvim', 'onsails/lspkind-nvim'}
     }
     use {
-      "hrsh7th/nvim-compe",
-      requires = {
-        { "hrsh7th/vim-vsnip", "hrsh7th/vim-vsnip-integ" }, -- integration with vim-vsnip
-      },
-    } 
+        "hrsh7th/nvim-compe",
+        requires = {
+            {"hrsh7th/vim-vsnip", "hrsh7th/vim-vsnip-integ"} -- integration with vim-vsnip
+        }
+    }
 
     -- completion
-    use { "mfussenegger/nvim-jdtls"}
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use {"mfussenegger/nvim-jdtls"}
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
     -- formatter
-    -- use 'mhartington/formatter.nvim'
-	use 'sbdchd/neoformat'
+    use 'sbdchd/neoformat'
 
     -- tree explorer
-    use {'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons'}}
-	  -- fern
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = {'kyazdani42/nvim-web-devicons'}
+    }
+    -- fern
     use {
         'lambdalisue/fern.vim',
         requires = {
-							'https://github.com/antoinemadec/FixCursorHold.nvim',
-							'https://github.com/lambdalisue/fern-renderer-nerdfont.vim',
-							'https://github.com/LumaKernel/fern-mapping-fzf.vim',
-                            'kyazdani42/nvim-web-devicons'
+            'https://github.com/antoinemadec/FixCursorHold.nvim',
+            'https://github.com/lambdalisue/fern-renderer-nerdfont.vim',
+            'https://github.com/LumaKernel/fern-mapping-fzf.vim',
+            'kyazdani42/nvim-web-devicons'
 
         }
     }
 
-
     -- Aesthetics
-    use { 'glepnir/galaxyline.nvim', branch = 'main', requires = {'kyazdani42/nvim-web-devicons'}}
+    use {
+        'glepnir/galaxyline.nvim',
+        branch = 'main',
+        requires = {'kyazdani42/nvim-web-devicons'}
+    }
     use 'romgrk/barbar.nvim'
     use 'liuchengxu/vista.vim'
     use 'lambdalisue/nerdfont.vim'
@@ -97,6 +92,8 @@ packer.startup(function()
     -- use 'glepnir/dashboard-nvim'
     use 'dstein64/vim-startuptime'
     use 'airblade/vim-rooter'
+
+    use "oberblastmeister/neuron.nvim"
 end)
 
 return packer
