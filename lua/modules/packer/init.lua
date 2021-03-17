@@ -9,12 +9,17 @@ packer.startup(function()
 
     -- Git
     use 'tpope/vim-fugitive'
+    use 'tpope/vim-rhubarb'
+    use 'shumphrey/fugitive-gitlab.vim'
+
     use 'airblade/vim-gitgutter'
     use 'rbong/vim-flog'
+    use 'mattn/vim-gist'
 
     -- Text Objects
     use 'b3nj5m1n/kommentary'
     use 'windwp/nvim-autopairs'
+    use 'AndrewRadev/tagalong.vim'
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
     use 'tpope/vim-abolish'
@@ -89,11 +94,11 @@ packer.startup(function()
     use 'sainnhe/sonokai'
 
     use 'mhinz/vim-startify'
-    -- use 'glepnir/dashboard-nvim'
     use 'dstein64/vim-startuptime'
     use 'airblade/vim-rooter'
-
+    use 'norcalli/nvim-colorizer.lua'
     use "oberblastmeister/neuron.nvim"
+    use 'mattn/emmet-vim'
 end)
 
 return packer

@@ -40,6 +40,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/barbar.nvim"
   },
+  ["emmet-vim"] = {
+    loaded = true,
+    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/emmet-vim"
+  },
   ["fern-mapping-fzf.vim"] = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/fern-mapping-fzf.vim"
@@ -51,6 +55,10 @@ _G.packer_plugins = {
   ["fern.vim"] = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/fern.vim"
+  },
+  ["fugitive-gitlab.vim"] = {
+    loaded = true,
+    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/fugitive-gitlab.vim"
   },
   ["galaxyline.nvim"] = {
     loaded = true,
@@ -87,6 +95,10 @@ _G.packer_plugins = {
   ["nvim-cheat.sh"] = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/nvim-cheat.sh"
+  },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-compe"] = {
     loaded = true,
@@ -133,6 +145,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/sonokai"
   },
+  ["tagalong.vim"] = {
+    loaded = true,
+    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/tagalong.vim"
+  },
   ["targets.vim"] = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/targets.vim"
@@ -169,6 +185,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/vim-fugitive"
   },
+  ["vim-gist"] = {
+    loaded = true,
+    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/vim-gist"
+  },
   ["vim-gitgutter"] = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/vim-gitgutter"
@@ -180,6 +200,10 @@ _G.packer_plugins = {
   ["vim-repeat"] = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/vim-repeat"
+  },
+  ["vim-rhubarb"] = {
+    loaded = true,
+    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/vim-rhubarb"
   },
   ["vim-rooter"] = {
     loaded = true,

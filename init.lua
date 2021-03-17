@@ -6,20 +6,22 @@ require('modules.packer.bootstrap')
 require('modules.packer')
 
 -- lsp
-require('plugins.nvim-lspconfig')
-require('modules.lsp.efm-config')
-require('modules.formatter')
+require('modules.langserver')
+require('modules.efm-config')
 
 -- Plugin Settings
+require('plugins.formatter')
 require('plugins.autopairs')
-require('plugins.barbar-config')
+require('plugins.barbar')
 require('plugins.compe')
-require('plugins.galaxyline-config')
-require('plugins.telescope-config')
-require('plugins.treesitter-config')
+require('plugins.galaxyline')
+require('plugins.telescope')
+require('plugins.treesitter')
 require('plugins.startify')
 require('plugins.nvimTree')
 require('plugins.neuron')
+require('plugins.emmet')
+require('plugins.colorizer')
 vim.api.nvim_exec([[
 source ~/.config/nvim/startify.vim
 ]], false)

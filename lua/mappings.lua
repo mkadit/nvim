@@ -14,13 +14,14 @@ local function set_keybindings()
         {'n', '<Leader>re', '<CMD>e ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}}, -- Somethign
 
         -- Find file Root
-        {'n', '<Leader>rd', '<CMD>lcd %:p:j<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>rj', '<CMD>Rooter<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>ad', '<CMD>lcd %:p:j<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>aj', '<CMD>Rooter<CR>', {noremap = true, silent = false}},
 
         -- Misc Things
         {'n', '<Esc><ESC>', '<CMD>nohlsearch<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>ed', '<CMD>setlocal spell! spelllang=en_gb complete+=kspell<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>ei', '<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', {noremap = true, silent = false}}, -- resize window
+        {'n', '<Leader>ae', '<CMD>setlocal spell! spelllang=en_gb complete+=kspell<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>ai', '<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', {noremap = true, silent = false}}, -- resize window
+        {'n', '<Leader>ac', '<CMD>ColorizerToggle<CR>', {noremap = true, silent = false}}, -- resize window
 
         -- Resizing Panes
         {'n', '<C-Left>', '<CMD>vertical resize +5<CR>', {noremap = true, silent = true}},
@@ -40,22 +41,19 @@ local function set_keybindings()
         {'n', '<Leader>qa', '<CMD>bufdo BufferClose!<CR>', {noremap = true, silent = true}},
         {'n', '<Leader>qo', '<CMD>BufferCloseAllButCurrent<CR>', {noremap = true, silent = true}},
         {'n', '<A-0>', '<CMD>BufferLast<CR>', {noremap = true, silent = true}}, 
-        --[[ {'n', '<C-TAB>', '<CMD>BufferMovePrevious<CR>', {noremap = true, silent = true}},
-        {'n', '<C-S-TAB>', '<CMD>BufferMoveNext<CR>', {noremap = true, silent = true}}, ]]
 
-        {'t', '<Esc>', '<C-\\><C-n>', {noremap = true, silent = true}},
 
         -- File Tree
         {'n', '<Leader>n', '<CMD>NvimTreeFindFile<CR>', {noremap = true, silent = false}}, 
 
         -- Fuzzy Finder
         {'n', '<Leader>.', '<CMD>lua require("telescope.builtin").file_browser()<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>aa', '<CMD>lua require("telescope.builtin").autocommands()<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>fa', '<CMD>lua require("telescope.builtin").autocommands()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fg', '<CMD>lua require("telescope.builtin").bcommits()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gf', '<CMD>lua require("telescope.builtin").git_branches()<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>gc', '<CMD>lua require("telescope.builtin").commits()<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>fc', '<CMD>lua require("telescope.builtin").commits()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fq', '<CMD>lua require("telescope.builtin").quickfix()<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>bb', '<CMD>lua require("telescope.builtin").buffers()<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>fb', '<CMD>lua require("telescope.builtin").buffers()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ff', '<CMD>lua require("telescope.builtin").find_files()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ft', '<CMD>lua require("telescope.builtin").treesitter()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fh', '<CMD>lua require("telescope.builtin").oldfiles()<CR>', {noremap = true, silent = false}},
@@ -67,10 +65,22 @@ local function set_keybindings()
         {'n', '<Leader>gs', '<CMD>G<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gD', '<CMD>GdiffSplit<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gb', '<CMD>GBlam<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>gp', '<CMD>GBrowse<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gl', '<CMD>Git log<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gj', '<CMD>diffget //2<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gk', '<CMD>diffget //3<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gg', '<CMD>Flogsplit<CR>', {noremap = true, silent = false}},
+
+
+        --- Gist
+        {'n', '<Leader>Gg', '<CMD>Gist<CR>', {noremap = true, silent = false}},
+        {'v', '<Leader>Gg', "<CMD>'<,'>Gist<CR>", {noremap = true, silent = false}},
+        {'n', '<Leader>Ga', '<CMD>Gist -a<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>Gm', '<CMD>Gist -m<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>Ge', '<CMD>Gist -e<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>Gd', '<CMD>Gist -d<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>Gl', '<CMD>Gist -l<CR>', {noremap = true, silent = false}},
+
 
         -- Tags
         {'n', '<Leader>t', '<CMD>Vista!!<CR>', {noremap = true, silent = false}},
@@ -109,6 +119,19 @@ local function set_keybindings()
 
         -- Formatter
         {'n', 'rf', '<CMD>Neoformat<CR>', {noremap = true, silent = true}},
+
+        -- Neuron
+
+        {'n', '<buffer><CR>', '<cmd>lua require"neuron".enter_link()<CR>', {noremap = true, silent = true}},
+        {'n', '<Space>zn', '<cmd>lua require"neuron/cmd".new_edit(require"neuron".config.neuron_dir)<CR>', {noremap = true, silent = true}},
+        {'n', '<Space>zf', '<cmd>lua require"neuron/telescope".find_zettels()<CR>', {noremap = true, silent = true}},
+        {'n', '<Space>zl', '<cmd>lua require"neuron/telescope".find_zettels{insert = true}<CR>', {noremap = true, silent = true}},
+        {'n', '<Space>zb', '<cmd>lua require"neuron/telescope".find_backlinks()<CR>', {noremap = true, silent = true}},
+        {'n', '<Space>zB', '<cmd>lua require"neuron/telescope".find_backlinks{insert = true}<CR>', {noremap = true, silent = true}},
+        {'n', '<Space>zt', '<cmd>lua require"neuron/telescope".find_tags()<CR>', {noremap = true, silent = true}},
+        {'n', '<Space>zs', '<cmd>lua require"neuron".rib{address = "127.0.0.1:8200", verbose = true}<CR>', {noremap = true, silent = true}},
+        {'n', '<buffer>gz]', '<cmd>lua require"neuron".goto_next_extmark()<CR>', {noremap = true, silent = true}},
+        {'n', '<buffer>gz[]', '<cmd>lua require"neuron".goto_prev_extmark()<CR>', {noremap = true, silent = true}},
 
     }
     function _G.show_documentation()
