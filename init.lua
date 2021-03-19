@@ -1,5 +1,5 @@
 -- General Settings
-require('settings')
+require('modules.settings')
 
 -- Packer
 require('modules.packer.bootstrap')
@@ -27,4 +27,4 @@ source ~/.config/nvim/startify.vim
 ]], false)
 
 -- Mappings
-require('mappings')
+require('modules.mappings')

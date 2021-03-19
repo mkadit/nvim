@@ -86,7 +86,7 @@ local function set_keybindings()
         {'n', '<Leader>t', '<CMD>Vista!!<CR>', {noremap = true, silent = false}},
 
         -- Cheatsheet
-        {'n', '<Leader>eh', '<CMD>Cheat<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>ah', '<CMD>Cheat<CR>', {noremap = true, silent = false}},
 
         -- File Manager
         {'n', '<Leader>vi', '<CMD>Vifm<CR>', {noremap = true, silent = false}},
