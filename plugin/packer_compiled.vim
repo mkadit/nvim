@@ -32,10 +32,6 @@ local function try_loadstring(s, component, name)
 end
 
 _G.packer_plugins = {
-  ["FixCursorHold.nvim"] = {
-    loaded = true,
-    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim"
-  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/barbar.nvim"
@@ -43,18 +39,6 @@ _G.packer_plugins = {
   ["emmet-vim"] = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/emmet-vim"
-  },
-  ["fern-mapping-fzf.vim"] = {
-    loaded = true,
-    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/fern-mapping-fzf.vim"
-  },
-  ["fern-renderer-nerdfont.vim"] = {
-    loaded = true,
-    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/fern-renderer-nerdfont.vim"
-  },
-  ["fern.vim"] = {
-    loaded = true,
-    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/fern.vim"
   },
   ["fugitive-gitlab.vim"] = {
     loaded = true,
@@ -236,6 +220,10 @@ _G.packer_plugins = {
   ["vista.vim"] = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/vista.vim"
+  },
+  ["webapi-vim"] = {
+    loaded = true,
+    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/webapi-vim"
   }
 }
 

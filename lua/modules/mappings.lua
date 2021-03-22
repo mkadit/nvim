@@ -22,16 +22,17 @@ local function set_keybindings()
         {'n', '<Leader>ae', '<CMD>setlocal spell! spelllang=en_gb complete+=kspell<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ai', '<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', {noremap = true, silent = false}}, -- resize window
         {'n', '<Leader>ac', '<CMD>ColorizerToggle<CR>', {noremap = true, silent = false}}, -- resize window
+        {'n', '<Leader>af', '<CMD>VimadeToggle<CR>', {noremap = true, silent = false}},
 
         -- Resizing Panes
         {'n', '<C-Left>', '<CMD>vertical resize +5<CR>', {noremap = true, silent = true}},
         {'n', '<C-Up>', '<CMD>resize -5<CR>', {noremap = true, silent = true}},
         {'n', '<C-Right>', '<CMD>vertical resize -5<CR>', {noremap = true, silent = true}},
-        {'n', '<C-Down>', '<CMD>resize +5<CR>', {noremap = true, silent = true}}, 
+        {'n', '<C-Down>', '<CMD>resize +5<CR>', {noremap = true, silent = true}},
 
         -- Session
         {'n', '<Leader>ss', ':SSave<Space>', {noremap = true, silent = true}}, {'n', '<Leader>sl', ':SLoad<Space>', {noremap = true, silent = true}},
-        {'n', '<Leader>sc', '<CMD>SClose<CR>', {noremap = true, silent = true}}, 
+        {'n', '<Leader>sc', '<CMD>SClose<CR>', {noremap = true, silent = true}},
 
         -- Buffers
         {'n', '<TAB>', '<CMD>BufferNext<CR>', {noremap = true, silent = true}},
@@ -40,11 +41,11 @@ local function set_keybindings()
         {'n', '<Leader>qq', '<CMD>bufdo BufferClose<CR>', {noremap = true, silent = true}},
         {'n', '<Leader>qa', '<CMD>bufdo BufferClose!<CR>', {noremap = true, silent = true}},
         {'n', '<Leader>qo', '<CMD>BufferCloseAllButCurrent<CR>', {noremap = true, silent = true}},
-        {'n', '<A-0>', '<CMD>BufferLast<CR>', {noremap = true, silent = true}}, 
+        {'n', '<A-0>', '<CMD>BufferLast<CR>', {noremap = true, silent = true}},
 
 
         -- File Tree
-        {'n', '<Leader>n', '<CMD>NvimTreeFindFile<CR>', {noremap = true, silent = false}}, 
+        {'n', '<Leader>n', '<CMD>NvimTreeFindFile<CR>', {noremap = true, silent = false}},
 
         -- Fuzzy Finder
         {'n', '<Leader>.', '<CMD>lua require("telescope.builtin").file_browser()<CR>', {noremap = true, silent = false}},
@@ -101,16 +102,16 @@ local function set_keybindings()
         {'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts},
         {'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts},
         {'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts},
-        {'n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts},
+        -- {'n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts},
         {'n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts}, {'n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts},
-        {'n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts},
+        {'n', '<Leader>fw', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts},
         {'n', 'rk', '<CMD>lua show_documentation()<CR>', {noremap = true, silent = true}},
         {'n', '<C-j>', '<CMD>lua require("lspsaga.hover").smart_scroll_hover(1)<CR>', {noremap = true, silent = true}},
         {'n', '<C-k>', '<CMD>lua require("lspsaga.hover").smart_scroll_hover(-1)<CR>', {noremap = true, silent = true}},
         --[[ {'v', 'ga', '<CMD>\'<,\'>lua require("lspsaga.codeaction").code_action()<CR>', opts},
         {'n', 'ga', '<CMD>lua require("lspsaga.codeaction").code_action()<CR>', opts}, ]]
         {'n', 'gk', '<CMD>lua require("lspsaga.provider").preview_definition()<CR>', {noremap = true, silent = true}},
-        {'n', 'gD', '<CMD>lua vim.lsp.util.show_line_diagnostics()<CR>', {noremap = true, silent = true}},
+        -- {'n', 'gD', '<CMD>lua vim.lsp.util.show_line_diagnostics()<CR>', {noremap = true, silent = true}},
         {'n', '[e', '<CMD>Lspsaga diagnostic_jump_prev<CR>', {noremap = true, silent = true}},
         {'n', ']e', '<CMD>Lspsaga diagnostic_jump_next<CR>', {noremap = true, silent = true}},
         {'n', 'rn', '<CMD>lua require("lspsaga.rename").rename()<CR>', {noremap = true, silent = true}},
@@ -131,7 +132,7 @@ local function set_keybindings()
         {'n', '<Space>zt', '<cmd>lua require"neuron/telescope".find_tags()<CR>', {noremap = true, silent = true}},
         {'n', '<Space>zs', '<cmd>lua require"neuron".rib{address = "127.0.0.1:8200", verbose = true}<CR>', {noremap = true, silent = true}},
         {'n', '<buffer>gz]', '<cmd>lua require"neuron".goto_next_extmark()<CR>', {noremap = true, silent = true}},
-        {'n', '<buffer>gz[]', '<cmd>lua require"neuron".goto_prev_extmark()<CR>', {noremap = true, silent = true}},
+        {'n', '<buffer>gz[', '<cmd>lua require"neuron".goto_prev_extmark()<CR>', {noremap = true, silent = true}},
 
     }
     function _G.show_documentation()

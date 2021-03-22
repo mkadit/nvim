@@ -14,7 +14,10 @@ packer.startup(function()
 
     use 'airblade/vim-gitgutter'
     use 'rbong/vim-flog'
-    use 'mattn/vim-gist'
+
+    -- Gist
+
+    use {'mattn/webapi-vim', requires = {'mattn/vim-gist'}}
 
     -- Text Objects
     use 'b3nj5m1n/kommentary'
@@ -70,17 +73,6 @@ packer.startup(function()
         'kyazdani42/nvim-tree.lua',
         requires = {'kyazdani42/nvim-web-devicons'}
     }
-    -- fern
-    use {
-        'lambdalisue/fern.vim',
-        requires = {
-            'https://github.com/antoinemadec/FixCursorHold.nvim',
-            'https://github.com/lambdalisue/fern-renderer-nerdfont.vim',
-            'https://github.com/LumaKernel/fern-mapping-fzf.vim',
-            'kyazdani42/nvim-web-devicons'
-
-        }
-    }
 
     -- Aesthetics
     use {
@@ -93,11 +85,19 @@ packer.startup(function()
     use 'lambdalisue/nerdfont.vim'
     use 'sainnhe/sonokai'
 
+    -- Notetaking via neuron
+    use {
+        "oberblastmeister/neuron.nvim",
+        requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
+    }
+
+    -- Colorizer
+    use 'norcalli/nvim-colorizer.lua'
+
+    -- Session and startpage
     use 'mhinz/vim-startify'
     use 'dstein64/vim-startuptime'
     use 'airblade/vim-rooter'
-    use 'norcalli/nvim-colorizer.lua'
-    use "oberblastmeister/neuron.nvim"
     use 'mattn/emmet-vim'
 end)
 
