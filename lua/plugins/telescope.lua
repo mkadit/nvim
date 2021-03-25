@@ -51,3 +51,4 @@ M.git_branches = function()
 end
 
 return M
+

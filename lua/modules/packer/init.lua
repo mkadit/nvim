@@ -54,6 +54,11 @@ packer.startup(function()
         'neovim/nvim-lspconfig',
         requires = {'glepnir/lspsaga.nvim', 'onsails/lspkind-nvim'}
     }
+    use {"mfussenegger/nvim-jdtls"}
+    use 'kabouzeid/nvim-lspinstall'
+
+
+    -- completion
     use {
         "hrsh7th/nvim-compe",
         requires = {
@@ -61,8 +66,7 @@ packer.startup(function()
         }
     }
 
-    -- completion
-    use {"mfussenegger/nvim-jdtls"}
+    -- treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
     -- formatter
@@ -84,6 +88,8 @@ packer.startup(function()
     use 'liuchengxu/vista.vim'
     use 'lambdalisue/nerdfont.vim'
     use 'sainnhe/sonokai'
+    use 'sainnhe/edge'
+    use 'sainnhe/gruvbox-material'
 
     -- Notetaking via neuron
     use {
@@ -96,6 +102,8 @@ packer.startup(function()
 
     -- Session and startpage
     use 'mhinz/vim-startify'
+
+    -- etc
     use 'dstein64/vim-startuptime'
     use 'airblade/vim-rooter'
     use 'mattn/emmet-vim'

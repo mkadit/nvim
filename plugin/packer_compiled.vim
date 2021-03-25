@@ -36,6 +36,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/barbar.nvim"
   },
+  edge = {
+    loaded = true,
+    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/edge"
+  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/emmet-vim"
@@ -47,6 +51,10 @@ _G.packer_plugins = {
   ["galaxyline.nvim"] = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
+  },
+  ["gruvbox-material"] = {
+    loaded = true,
+    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/gruvbox-material"
   },
   kommentary = {
     loaded = true,
@@ -95,6 +103,10 @@ _G.packer_plugins = {
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
+  ["nvim-lspinstall"] = {
+    loaded = true,
+    path = "/home/mkaditya/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
   ["nvim-tree.lua"] = {
     loaded = true,

@@ -9,7 +9,7 @@ capability.textDocument.completion.completionItem.snippetSupport = true
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = {"bashls", "clangd", "cssls", "html", "tsserver"}
+local servers = {"bashls", "clangd", "tsserver"}
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
@@ -50,6 +50,7 @@ nvim_lsp.rust_analyzer.setup({
 })
 
 USER = vim.fn.expand('$USER')
+DATA = vim.fn.stdpath('data')
 
 local sumneko_root_path = ""
 local sumneko_binary = ""
@@ -77,3 +78,119 @@ nvim_lsp.sumneko_lua.setup {
         }
     }
 }
+
+
+-- html language server
+nvim_lsp.html.setup{
+	cmd = { "node", DATA .. "/lspinstall/html/vscode-html/html-language-features/server/dist/node/htmlServerMain.js", "--stdio" },
+	filetypes = {
+		  -- html
+		  'aspnetcorerazor',
+		  'blade',
+		  'django-html',
+		  'edge',
+		  'ejs',
+		  'erb',
+		  'gohtml',
+		  'haml',
+		  'handlebars',
+		  'hbs',
+		  'html',
+		  'html-eex',
+		  'jade',
+		  'leaf',
+		  'liquid',
+		  'markdown',
+		  'mdx',
+		  'mustache',
+		  'njk',
+		  'nunjucks',
+		  'php',
+		  'razor',
+		  'slim',
+		  'twig',
+		  -- mixed
+		  'vue',
+		  'svelte',
+		},
+	root_dir = require'lspconfig'.util.root_pattern(".git", vim.fn.getcwd()),
+}
+
+
+local configs = require'lspconfig/configs'
+-- Check if it's already defined for when reloading this file.
+
+-- tailwindcss language server
+if not nvim_lsp.tailwindcss then
+  configs.tailwindcss = {
+    default_config = {
+      cmd = {"node", DATA .. '/lspinstall/tailwindcss/tailwindcss-intellisense/extension/dist/server/index.js', '--stdio'};
+	  filetypes = {
+		  -- html
+		  'aspnetcorerazor',
+		  'blade',
+		  'django-html',
+		  'edge',
+		  'ejs',
+		  'erb',
+		  'gohtml',
+		  'haml',
+		  'handlebars',
+		  'hbs',
+		  'html',
+		  'html-eex',
+		  'jade', 'leaf',
+		  'liquid',
+		  'markdown',
+		  'mdx',
+		  'mustache',
+		  'njk',
+		  'nunjucks',
+		  'php',
+		  'razor',
+		  'slim',
+		  'twig',
+		  -- css
+		  'css',
+		  'less',
+		  'postcss',
+		  'sass',
+		  'scss',
+		  'stylus',
+		  'sugarss',
+		  -- js
+		  'javascript',
+		  'javascriptreact',
+		  'reason',
+		  'rescript',
+		  'typescript',
+		  'typescriptreact',
+		  -- mixed
+		  'vue',
+		  'svelte',
+		},
+      root_dir = function(fname)
+        return nvim_lsp.util.find_git_ancestor(fname) or vim.loop.os_homedir()
+      end;
+      settings = {};
+
+    };
+  }
+end
+nvim_lsp.tailwindcss.setup{}
+
+-- css language server
+if not nvim_lsp.css then
+  configs.css = {
+    default_config = {
+	cmd = { "node", DATA .. "/lspinstall/css/vscode-css/css-language-features/server/dist/node/cssServerMain.js", "--stdio" },
+filetypes = { 'css', 'less', 'scss' },
+      root_dir = function(fname)
+        return nvim_lsp.util.find_git_ancestor(fname) or vim.loop.os_homedir()
+      end;
+      settings = {};
+
+    };
+  }
+end
+nvim_lsp.css.setup{}

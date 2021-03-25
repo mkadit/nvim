@@ -31,8 +31,10 @@ local function set_keybindings()
         {'n', '<C-Down>', '<CMD>resize +5<CR>', {noremap = true, silent = true}},
 
         -- Session
-        {'n', '<Leader>ss', ':SSave<Space>', {noremap = true, silent = true}}, {'n', '<Leader>sl', ':SLoad<Space>', {noremap = true, silent = true}},
+        {'n', '<Leader>ss', ':SSave<Space>', {noremap = true, silent = true}}, 
+        {'n', '<Leader>sl', ':SLoad<Space>', {noremap = true, silent = true}},
         {'n', '<Leader>sc', '<CMD>SClose<CR>', {noremap = true, silent = true}},
+        {'n', '<Leader>sd', '<CMD>SDelete<CR>', {noremap = true, silent = true}},
 
         -- Buffers
         {'n', '<TAB>', '<CMD>BufferNext<CR>', {noremap = true, silent = true}},
@@ -56,6 +58,7 @@ local function set_keybindings()
         {'n', '<Leader>fq', '<CMD>lua require("telescope.builtin").quickfix()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fb', '<CMD>lua require("telescope.builtin").buffers()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ff', '<CMD>lua require("telescope.builtin").find_files()<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>fl', '<CMD>Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ft', '<CMD>lua require("telescope.builtin").treesitter()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fh', '<CMD>lua require("telescope.builtin").oldfiles()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fr', '<CMD>lua require("telescope.builtin").live_grep()<CR>', {noremap = true, silent = false}},
