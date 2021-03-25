@@ -57,7 +57,6 @@ packer.startup(function()
     use {"mfussenegger/nvim-jdtls"}
     use 'kabouzeid/nvim-lspinstall'
 
-
     -- completion
     use {
         "hrsh7th/nvim-compe",
@@ -107,6 +106,8 @@ packer.startup(function()
     use 'dstein64/vim-startuptime'
     use 'airblade/vim-rooter'
     use 'mattn/emmet-vim'
+
+    use 'andweeb/presence.nvim'
 end)
 
 return packer

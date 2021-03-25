@@ -1,13 +1,13 @@
 -- General Settings
 require('modules.settings')
 
--- Packer
+-- Packer 
 require('modules.packer.bootstrap')
 require('modules.packer')
 
 -- lsp
-require('modules.langserver')
-require('modules.efm-config')
+require('modules.lsp')
+require('modules.lsp.efm-config')
 
 -- Plugin Settings
 require('plugins.formatter')
@@ -22,9 +22,7 @@ require('plugins.nvimTree')
 require('plugins.neuron')
 require('plugins.emmet')
 require('plugins.colorizer')
-vim.api.nvim_exec([[
-source ~/.config/nvim/startify.vim
-]], false)
+require('plugins.startify')
 
 -- Mappings
 require('modules.mappings')
