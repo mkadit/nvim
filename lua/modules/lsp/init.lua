@@ -12,7 +12,7 @@ capability.textDocument.completion.completionItem.snippetSupport = true
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = {"bashls", "clangd", "tsserver"}
+local servers = { "clangd", "tsserver"}
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
@@ -23,8 +23,12 @@ for _, lsp in ipairs(servers) do
     }
 end
 
+nvim_lsp.bashls.setup{
+	cmd = { DATA .. "/lspinstall/bash/node_modules/.bin/bash-language-server", "start"},
+}
+
 nvim_lsp.gopls.setup {
-    cmd = {"gopls", "serve"},
+	cmd = { DATA .. "/lspinstall/go/gopls", "serve"},
     settings = {gopls = {analyses = {unusedparams = true}, staticcheck = true}},
     filetypes = {"go", "gomod"},
     root_dir = function()
@@ -42,7 +46,8 @@ nvim_lsp.pyright.setup {
 
 }
 nvim_lsp.rust_analyzer.setup({
-    on_attach = on_attach,
+    -- on_attach = on_attach,
+    cmd = {DATA .. '/lspinstall/rust/rust-analyzer'},
     capabilities = capability,
     settings = {
         ["rust-analyzer"] = {
@@ -54,11 +59,6 @@ nvim_lsp.rust_analyzer.setup({
 })
 
 
-local sumneko_root_path = ""
-local sumneko_binary = ""
-
-sumneko_root_path = "/home/" .. USER .. "/.cache/nvim/nvim_lsp/lua-language-server"
-sumneko_binary = "/home/" .. USER .. "/.cache/nvim/nvim_lsp/lua-language-server/bin/Linux/lua-language-server"
 nvim_lsp.sumneko_lua.setup {
     -- cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
     cmd = {DATA .. '/lspinstall/lua/sumneko-lua-language-server'},

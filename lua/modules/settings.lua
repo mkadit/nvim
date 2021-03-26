@@ -96,7 +96,7 @@ local options = {
 setOptions(options)
 
 vim.cmd('syntax on')
-vim.cmd('colorscheme edge')
+vim.cmd('colorscheme sonokai')
 vim.api.nvim_exec([[
 set listchars=tab:»\ ,nbsp:␣,trail:•,extends:»,precedes:«,eol:↲
 ]], false)

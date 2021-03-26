@@ -36,8 +36,8 @@ local languages = {
 }
 
 nvim_lsp.efm.setup {
+	cmd = { DATA .. "/lspinstall/efm/efm-langserver"},
     init_options = {documentFormatting = true, codeAction = true},
-    cmd = {"efm-langserver"},
     on_attach = function (client)
 		client.resolved_capabilities.rename = false
 		client.resolved_capabilities.hover = false
