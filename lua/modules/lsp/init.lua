@@ -1,6 +1,9 @@
 local nvim_lsp = require('lspconfig')
 local saga = require('lspsaga')
 
+USER = vim.fn.expand('$USER')
+DATA = vim.fn.stdpath('data')
+
 saga.init_lsp_saga(opt)
 require('lspkind').init({})
 
@@ -31,6 +34,7 @@ nvim_lsp.gopls.setup {
 }
 
 nvim_lsp.pyright.setup {
+	cmd = { DATA .. "/lspinstall/python/node_modules/.bin/pyright-langserver", "--stdio"},
     root_dir = function()
         return vim.loop.cwd()
     end,
@@ -49,8 +53,6 @@ nvim_lsp.rust_analyzer.setup({
     }
 })
 
-USER = vim.fn.expand('$USER')
-DATA = vim.fn.stdpath('data')
 
 local sumneko_root_path = ""
 local sumneko_binary = ""
@@ -58,7 +60,8 @@ local sumneko_binary = ""
 sumneko_root_path = "/home/" .. USER .. "/.cache/nvim/nvim_lsp/lua-language-server"
 sumneko_binary = "/home/" .. USER .. "/.cache/nvim/nvim_lsp/lua-language-server/bin/Linux/lua-language-server"
 nvim_lsp.sumneko_lua.setup {
-    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+    -- cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+    cmd = {DATA .. '/lspinstall/lua/sumneko-lua-language-server'},
     settings = {
         Lua = {
             runtime = {

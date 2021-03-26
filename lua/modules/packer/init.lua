@@ -17,7 +17,7 @@ packer.startup(function()
 
     -- Gist
 
-    use {'mattn/webapi-vim', requires = {'mattn/vim-gist'}}
+    use {'mattn/vim-gist', requires = {'mattn/webapi-vim'}}
 
     -- Text Objects
     use 'b3nj5m1n/kommentary'
