@@ -69,9 +69,9 @@ local function set_keybindings()
         {'n', '<Leader>gf', '<CMD>lua require("telescope.builtin").git_branches()<CR>', {noremap = true, silent = false}},
         -- Fugitive
         {'n', '<Leader>gs', '<CMD>G<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>gD', '<CMD>GdiffSplit<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>gb', '<CMD>GBlame<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>gp', '<CMD>GBrowse<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>gD', '<CMD>Gdiffsplit<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>gb', '<CMD>Gblame<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>gp', '<CMD>Gbrowse<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gl', '<CMD>Git log<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gj', '<CMD>diffget //2<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gk', '<CMD>diffget //3<CR>', {noremap = true, silent = false}},
@@ -81,6 +81,7 @@ local function set_keybindings()
         --- Gist
         {'n', '<Leader>Gg', '<CMD>Gist<CR>', {noremap = true, silent = false}},
         {'v', '<Leader>Gg', "<CMD>'<,'>Gist<CR>", {noremap = true, silent = false}},
+        {'n', '<Leader>Gp', '<CMD>Gist -p<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>Ga', '<CMD>Gist -a<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>Gm', '<CMD>Gist -m<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>Ge', '<CMD>Gist -e<CR>', {noremap = true, silent = false}},
@@ -108,21 +109,21 @@ local function set_keybindings()
         {'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts},
         {'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts},
         {'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts},
-        -- {'n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts},
         {'n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts}, {'n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts},
         {'n', '<Leader>fw', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts},
         {'n', 'rk', '<CMD>lua show_documentation()<CR>', {noremap = true, silent = true}},
         {'n', '<C-j>', '<CMD>lua require("lspsaga.hover").smart_scroll_hover(1)<CR>', {noremap = true, silent = true}},
         {'n', '<C-k>', '<CMD>lua require("lspsaga.hover").smart_scroll_hover(-1)<CR>', {noremap = true, silent = true}},
-        --[[ {'v', 'ga', '<CMD>\'<,\'>lua require("lspsaga.codeaction").code_action()<CR>', opts},
-        {'n', 'ga', '<CMD>lua require("lspsaga.codeaction").code_action()<CR>', opts}, ]]
         {'n', 'gk', '<CMD>lua require("lspsaga.provider").preview_definition()<CR>', {noremap = true, silent = true}},
-        -- {'n', 'gD', '<CMD>lua vim.lsp.util.show_line_diagnostics()<CR>', {noremap = true, silent = true}},
         {'n', '[e', '<CMD>Lspsaga diagnostic_jump_prev<CR>', {noremap = true, silent = true}},
         {'n', ']e', '<CMD>Lspsaga diagnostic_jump_next<CR>', {noremap = true, silent = true}},
         {'n', 'rn', '<CMD>lua require("lspsaga.rename").rename()<CR>', {noremap = true, silent = true}},
         {'n', 're', '<CMD>lua vim.lsp.buf.formatting()<CR>', {noremap = true, silent = true}},
         {'n', '<leader>p', '<CMD>lua require("lspsaga.provider").lsp_finder()<CR>', {noremap = true, silent = true}},
+        -- {'n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts},
+        -- {'v', 'ga', '<CMD>\'<,\'>lua require("lspsaga.codeaction").code_action()<CR>', opts},
+        -- {'n', 'ga', '<CMD>lua require("lspsaga.codeaction").code_action()<CR>', opts},
+        -- {'n', 'gD', '<CMD>lua vim.lsp.util.show_line_diagnostics()<CR>', {noremap = true, silent = true}},
 
         -- Formatter
         {'n', 'rf', '<CMD>Neoformat<CR>', {noremap = true, silent = true}},
@@ -130,16 +131,16 @@ local function set_keybindings()
         -- Neuron
 
         {'n', '<buffer><CR>', '<cmd>lua require"neuron".enter_link()<CR>', {noremap = true, silent = true}},
-        {'n', '<Space>zn', '<cmd>lua require"neuron/cmd".new_edit(require"neuron".config.neuron_dir)<CR>', {noremap = true, silent = true}},
+        {'n', '<Space>zb', '<cmd>lua require"neuron/telescope".find_backlinks()<CR>', {noremap = true, silent = true}},
         {'n', '<Space>zf', '<cmd>lua require"neuron/telescope".find_zettels()<CR>', {noremap = true, silent = true}},
         {'n', '<Space>zl', '<cmd>lua require"neuron/telescope".find_zettels{insert = true}<CR>', {noremap = true, silent = true}},
-        {'n', '<Space>zb', '<cmd>lua require"neuron/telescope".find_backlinks()<CR>', {noremap = true, silent = true}},
-        {'n', '<Space>zB', '<cmd>lua require"neuron/telescope".find_backlinks{insert = true}<CR>', {noremap = true, silent = true}},
-        {'n', '<Space>zt', '<cmd>lua require"neuron/telescope".find_tags()<CR>', {noremap = true, silent = true}},
+        {'n', '<Space>zn', '<cmd>lua require"neuron/cmd".new_edit(require"neuron".config.neuron_dir)<CR>', {noremap = true, silent = true}},
         {'n', '<Space>zs', '<cmd>!neuron-ss<CR>', {noremap = true, silent = true}},
-        {'n', '<Space>zS', '<cmd>lua require"neuron".rib{address = "127.0.0.1:8200", verbose = true}<CR>', {noremap = true, silent = true}},
-        {'n', '<buffer>gz]', '<cmd>lua require"neuron".goto_next_extmark()<CR>', {noremap = true, silent = true}},
+        {'n', '<Space>zt', '<cmd>lua require"neuron/telescope".find_tags()<CR>', {noremap = true, silent = true}},
         {'n', '<buffer>gz[', '<cmd>lua require"neuron".goto_prev_extmark()<CR>', {noremap = true, silent = true}},
+        {'n', '<buffer>gz]', '<cmd>lua require"neuron".goto_next_extmark()<CR>', {noremap = true, silent = true}},
+        -- {'n', '<Space>zB', '<cmd>lua require"neuron/telescope".find_backlinks{insert = true}<CR>', {noremap = true, silent = true}},
+        -- {'n', '<Space>zS', '<cmd>lua require"neuron".rib{address = "127.0.0.1:8200", verbose = true}<CR>', {noremap = true, silent = true}},
 
     }
     function _G.show_documentation()

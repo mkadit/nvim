@@ -2,9 +2,9 @@ vim.g.which_key_timeout = 100
 local wk = require('whichkey_setup')
 
 vim.g.mapleader = ' '
-local keymap = {
+local leader_keymap = {
     ['.'] = {'<CMD>lua require("telescope.builtin").file_browser()<CR>', 'filer'},
-    a = { -- set a nested structure
+    a = {
         name = '+action',
         s = {'<CMD>source ~/.config/nvim/init.lua<CR>', 'source init.lua'},
         r = {'<CMD>e ~/.config/nvim/init.lua<CR>', 'edit init.lua'},
@@ -14,14 +14,14 @@ local keymap = {
         i = {'<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', 'spellcheck indo'},
         c = {'<CMD>ColorizerToggle<CR>', 'colorizer'},
         f = {'<CMD>VimadeToggle<CR>', 'fade other pane'},
-        h = {'<CMD>Cheat<CR>', 'cheatsheet'},
+        h = {'<CMD>Cheat<CR>', 'cheatsheet'}
     },
     t = {'<CMD>Vista!!<CR>', 'tagbar'},
     n = {'<CMD>NvimTreeFindFile<CR>', 'file tree'},
     m = {'<CMD>MaximizerToggle<CR>', 'maximizer'},
     p = {'<CMD>lua require("lspsaga.provider").lsp_finder()<CR>', 'lsp finder'},
     v = {'<CMD>Vifm<CR>', 'file manager'},
-    f = { -- set a nested structure
+    f = {
         name = '+find',
         a = {'<Cmd>lua require("telescope.builtin").autocommands()<CR>', 'autocommands'},
         b = {'<Cmd>lua require("telescope.builtin").buffers()<CR>', 'buffers'},
@@ -35,24 +35,53 @@ local keymap = {
         q = {'<Cmd>lua require("telescope.builtin").quickfix()<CR>', 'quickfix'},
         r = {'<Cmd>lua require("telescope.builtin").live_grep()<CR>', 'ripgrep'},
         t = {'<Cmd>lua require("telescope.builtin").treesitter()<CR>', 'treesitter'},
-        w = {'<Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', 'quickfix'}
+        w = {'<Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', 'loclist'}
     },
-    g = { -- set a nested structure
-        name = '+git'
+    g = {
+        name = '+git',
+        s = {'<CMD>G<CR>', 'git status'},
+        D = {'<CMD>Gdiffsplit<CR>', 'git diff current file'},
+        b = {'<CMD>Gblame<CR>', 'git blame'},
+        p = {'<CMD>Gbrowse<CR>', 'open file in remote repo'},
+        l = {'<CMD>G log<CR>', 'git log'},
+        j = {'<CMD>diffget //2<CR>', 'get left'},
+        k = {'<CMD>diffget //k<CR>', 'get left'},
+        g = {'<CMD>Flogsplit<CR>', 'commits graph'}
     },
-    G = { -- set a nested structure
-        name = '+Gist'
+    G = {
+        name = '+Gist',
+        g = {'<CMD>Gist<CR>', 'create a gist'},
+        p = {'<CMD>Gist -p<CR>', 'create a private gist'},
+        a = {'<CMD>Gist -a<CR>', 'create a gist anonymously'},
+        m = {'<CMD>Gist -m<CR>', 'crete a gist will all buffers'},
+        e = {'<CMD>Gist -e<CR>', 'edit current file gist'},
+        d = {'<CMD>Gist -d<CR>', 'delete gist'},
+        l = {'<CMD>Gist -l<CR>', 'gist list'}
     },
 
-    s = { -- set a nested structure
-        name = '+session'
+    s = {
+        name = '+session',
+        s = {'<CMD>SSave<CR>', 'save sesion'},
+        l = {'<CMD>SLoad<CR>', 'load session'},
+        c = {'<CMD>SClose<CR>', 'close session'},
+        d = {'<CMD>SDelete<CR>', 'delete sesion'}
     },
-    q = { -- set a nested structure
-        name = '+buffers'
+    q = {
+        name = '+buffers',
+        d = {'<CMD>BufferClose<CR>', 'close buffer'},
+        q = {'<CMD>bufdo BufferClose<CR>', 'close all buffer'},
+        a = {'<CMD>bufdo BufferClose<CR>!', 'close all buffer force'},
+        o = {'<CMD>BufferCloseAllButCurrent<CR>', 'close all but current buffer'}
     },
-    z = { -- set a nested structure
-        name = '+neuron'
+    z = {
+        name = '+neuron',
+        n = {'<cmd>lua require"neuron/cmd".new_edit(require"neuron".config.neuron_dir)<CR>', 'new note'},
+        f = {'<cmd>lua require"neuron/telescope".find_zettels()<CR>', 'find note'},
+        l = {'<cmd>lua require"neuron/telescope".find_zettels{insert = true}<CR>', 'get link'},
+        b = {'<cmd>lua require"neuron/telescope".find_backlinks()<CR>', 'find backlinks'},
+        t = {'<cmd>lua require"neuron/telescope".find_tags()<CR>', 'find tags'},
+        s = {'<cmd>!neuron-ss<CR>', 'take screenshot notes'}
     }
 }
 
-wk.register_keymap('leader', keymap)
+wk.register_keymap('leader', leader_keymap)
