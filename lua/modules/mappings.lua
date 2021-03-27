@@ -7,18 +7,20 @@ local function set_keybindings()
         -- {'mode', 'keybindings', 'command', '{noremap=bool', 'silent=bool', expr=bool}}
 
         -- Disable Keys
-        {'n', 'Q', '<Nop>', {noremap = true, silent = true}}, {'n', '<C-z>', '<Nop>', {noremap = true, silent = true}}, -- reload configuration
+        {'n', 'Q', '<Nop>', {noremap = true, silent = true}}, 
+        {'n', '<C-z>', '<Nop>', {noremap = true, silent = true}}, 
+
 
         -- Traverse and sourcing
-        {'n', '<Leader>rr', '<CMD>source ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>re', '<CMD>e ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}}, -- Somethign
+        {'n', '<Leader>as', '<CMD>source ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>ar', '<CMD>e ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}}, -- Somethign
 
         -- Find file Root
         {'n', '<Leader>ad', '<CMD>lcd %:p:j<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>aj', '<CMD>Rooter<CR>', {noremap = true, silent = false}},
 
         -- Misc Things
-        {'n', '<Esc><ESC>', '<CMD>nohlsearch<CR>', {noremap = true, silent = false}},
+        {'n', '<ESC><ESC>', '<CMD>nohlsearch<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ae', '<CMD>setlocal spell! spelllang=en_gb complete+=kspell<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ai', '<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', {noremap = true, silent = false}}, -- resize window
         {'n', '<Leader>ac', '<CMD>ColorizerToggle<CR>', {noremap = true, silent = false}}, -- resize window
@@ -50,25 +52,25 @@ local function set_keybindings()
         {'n', '<Leader>n', '<CMD>NvimTreeFindFile<CR>', {noremap = true, silent = false}},
 
         -- Fuzzy Finder
+
         {'n', '<Leader>.', '<CMD>lua require("telescope.builtin").file_browser()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fa', '<CMD>lua require("telescope.builtin").autocommands()<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>fg', '<CMD>lua require("telescope.builtin").bcommits()<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>gf', '<CMD>lua require("telescope.builtin").git_branches()<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>fc', '<CMD>lua require("telescope.builtin").commits()<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>fq', '<CMD>lua require("telescope.builtin").quickfix()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fb', '<CMD>lua require("telescope.builtin").buffers()<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>fc', '<CMD>lua require("telescope.builtin").commits()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ff', '<CMD>lua require("telescope.builtin").find_files()<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>fl', '<CMD>Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>ft', '<CMD>lua require("telescope.builtin").treesitter()<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>fg', '<CMD>lua require("telescope.builtin").bcommits()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fh', '<CMD>lua require("telescope.builtin").oldfiles()<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>fr', '<CMD>lua require("telescope.builtin").live_grep()<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>fp', '<CMD>lua require("telescope").extensions.project.project{}<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>fl', '<CMD>Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fm', '<CMD>lua require("telescope").extensions.media_files.media_files()<CR>', {noremap = true, silent = false}},
-
+        {'n', '<Leader>fp', '<CMD>lua require("telescope").extensions.project.project{}<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>fq', '<CMD>lua require("telescope.builtin").quickfix()<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>fr', '<CMD>lua require("telescope.builtin").live_grep()<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>ft', '<CMD>lua require("telescope.builtin").treesitter()<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>gf', '<CMD>lua require("telescope.builtin").git_branches()<CR>', {noremap = true, silent = false}},
         -- Fugitive
         {'n', '<Leader>gs', '<CMD>G<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gD', '<CMD>GdiffSplit<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>gb', '<CMD>GBlam<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>gb', '<CMD>GBlame<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gp', '<CMD>GBrowse<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gl', '<CMD>Git log<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gj', '<CMD>diffget //2<CR>', {noremap = true, silent = false}},
@@ -93,13 +95,14 @@ local function set_keybindings()
         {'n', '<Leader>ah', '<CMD>Cheat<CR>', {noremap = true, silent = false}},
 
         -- File Manager
-        {'n', '<Leader>vi', '<CMD>Vifm<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>v', '<CMD>Vifm<CR>', {noremap = true, silent = false}},
 
         -- Maximizing Pane
-        {'n', '<Leader>m', '<CMD>MaximizerToggle<CR>', {noremap = true, silent = false}}, {'n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts},
+        {'n', '<Leader>m', '<CMD>MaximizerToggle<CR>', {noremap = true, silent = false}}, 
 
 
         -- LSP
+        {'n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts},
         {'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts}, {'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts},
         {'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts},
         {'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts},
@@ -133,7 +136,8 @@ local function set_keybindings()
         {'n', '<Space>zb', '<cmd>lua require"neuron/telescope".find_backlinks()<CR>', {noremap = true, silent = true}},
         {'n', '<Space>zB', '<cmd>lua require"neuron/telescope".find_backlinks{insert = true}<CR>', {noremap = true, silent = true}},
         {'n', '<Space>zt', '<cmd>lua require"neuron/telescope".find_tags()<CR>', {noremap = true, silent = true}},
-        {'n', '<Space>zs', '<cmd>lua require"neuron".rib{address = "127.0.0.1:8200", verbose = true}<CR>', {noremap = true, silent = true}},
+        {'n', '<Space>zs', '<cmd>!neuron-ss<CR>', {noremap = true, silent = true}},
+        {'n', '<Space>zS', '<cmd>lua require"neuron".rib{address = "127.0.0.1:8200", verbose = true}<CR>', {noremap = true, silent = true}},
         {'n', '<buffer>gz]', '<cmd>lua require"neuron".goto_next_extmark()<CR>', {noremap = true, silent = true}},
         {'n', '<buffer>gz[', '<cmd>lua require"neuron".goto_prev_extmark()<CR>', {noremap = true, silent = true}},
 

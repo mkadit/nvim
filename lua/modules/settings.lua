@@ -81,6 +81,7 @@ local options = {
     termguicolors  = true,
     title          = true,
     ttimeoutlen    = 50,
+    timeoutlen    =  500,
     undodir        = '~/.local/share/nvim/undo',
     undofile       = true,
     updatetime     = 300,
@@ -96,9 +97,12 @@ local options = {
 setOptions(options)
 
 vim.cmd('syntax on')
-vim.cmd('colorscheme sonokai')
+vim.cmd('colorscheme dracula')
 vim.api.nvim_exec([[
 set listchars=tab:»\ ,nbsp:␣,trail:•,extends:»,precedes:«,eol:↲
 ]], false)
 
 vim.g.python3_host_prog = '/usr/bin/python3.9'
+
+-- vim-go
+-- vim.g.go_gopls_enabled = 0

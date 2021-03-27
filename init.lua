@@ -23,6 +23,7 @@ require('plugins.neuron')
 require('plugins.emmet')
 require('plugins.colorizer')
 require('plugins.startify')
+require('plugins.whichkey')
 
 -- Mappings
 require('modules.mappings')

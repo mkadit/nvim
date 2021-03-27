@@ -87,8 +87,10 @@ packer.startup(function()
     use 'liuchengxu/vista.vim'
     use 'lambdalisue/nerdfont.vim'
     use 'sainnhe/sonokai'
-    use 'sainnhe/edge'
-    use 'sainnhe/gruvbox-material'
+    -- use 'sainnhe/edge'
+    -- use 'sainnhe/gruvbox-material'
+    -- use 'nekonako/xresources-nvim'
+    use 'christianchiarulli/nvcode-color-schemes.vim'
 
     -- Notetaking via neuron
     use {
@@ -108,6 +110,12 @@ packer.startup(function()
     use 'mattn/emmet-vim'
 
     use 'andweeb/presence.nvim'
+
+    use {
+        'AckslD/nvim-whichkey-setup.lua',
+        requires = {'liuchengxu/vim-which-key'}
+    }
+
 end)
 
 return packer
