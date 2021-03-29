@@ -20,6 +20,7 @@ local function set_keybindings()
         {'n', '<Leader>aj', '<CMD>Rooter<CR>', {noremap = true, silent = false}},
 
         -- Misc Things
+        {'t', '<ESC><ESC>', '<c-\\><c-n>', {noremap = true, silent = false}},
         {'n', '<ESC><ESC>', '<CMD>nohlsearch<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ae', '<CMD>setlocal spell! spelllang=en_gb complete+=kspell<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ai', '<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', {noremap = true, silent = false}}, -- resize window

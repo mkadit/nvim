@@ -1,7 +1,7 @@
 -- General Settings
 require('modules.settings')
 
--- Packer 
+-- Packer
 require('modules.packer.bootstrap')
 require('modules.packer')
 
