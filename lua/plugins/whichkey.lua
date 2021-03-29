@@ -73,6 +73,13 @@ local leader_keymap = {
         a = {'<CMD>bufdo BufferClose<CR>!', 'close all buffer force'},
         o = {'<CMD>BufferCloseAllButCurrent<CR>', 'close all but current buffer'}
     },
+    l={
+        name = '+LSP',
+        s = {'<CMD>LspStart ', 'start LSP <name>'},
+        n = {'<CMD>LspStop<CR>', 'stop LSP'},
+        i = {'<CMD>LspInfo<CR>', 'info LSP'},
+        r = {'<CMD>LspRestart<CR>', 'restart LSP'},
+    },
     z = {
         name = '+neuron',
         n = {'<cmd>lua require"neuron/cmd".new_edit(require"neuron".config.neuron_dir)<CR>', 'new note'},
