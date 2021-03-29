@@ -43,6 +43,7 @@ local function set_keybindings()
         {'n', '<TAB>', '<CMD>BufferNext<CR>', {noremap = true, silent = true}},
         {'n', '<S-TAB>', '<CMD>BufferPrevious<CR>', {noremap = true, silent = true}},
         {'n', '<Leader>qd', '<CMD>BufferClose<CR>', {noremap = true, silent = true}},
+        {'n', '<Leader>qf', '<CMD>BufferClose!<CR>', {noremap = true, silent = true}},
         {'n', '<Leader>qq', '<CMD>bufdo BufferClose<CR>', {noremap = true, silent = true}},
         {'n', '<Leader>qa', '<CMD>bufdo BufferClose!<CR>', {noremap = true, silent = true}},
         {'n', '<Leader>qo', '<CMD>BufferCloseAllButCurrent<CR>', {noremap = true, silent = true}},

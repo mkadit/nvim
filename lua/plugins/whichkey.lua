@@ -69,6 +69,7 @@ local leader_keymap = {
     q = {
         name = '+buffers',
         d = {'<CMD>BufferClose<CR>', 'close buffer'},
+        f = {'<CMD>BufferClose<CR>!', 'close buffer force'},
         q = {'<CMD>bufdo BufferClose<CR>', 'close all buffer'},
         a = {'<CMD>bufdo BufferClose<CR>!', 'close all buffer force'},
         o = {'<CMD>BufferCloseAllButCurrent<CR>', 'close all but current buffer'}

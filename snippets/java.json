@@ -132,5 +132,15 @@
     "prefix": "prf",
     "body": ["private ${1:String} ${2:name};"],
     "description": "Private field"
+  },
+  "public class": {
+    "prefix": "pcl",
+    "body": ["public class ${TM_FILENAME_BASE} {", "\t$0", "}"],
+    "description": "Create public class"
+  },
+  "public interface": {
+    "prefix": "pin",
+    "body": ["public interface ${TM_FILENAME_BASE} {", "\t$0", "}"],
+    "description": "Create public interface"
   }
 }
