@@ -121,7 +121,7 @@ local function set_keybindings()
         {'n', 'rn', '<CMD>lua require("lspsaga.rename").rename()<CR>', {noremap = true, silent = true}},
         {'n', 're', '<CMD>lua vim.lsp.buf.formatting()<CR>', {noremap = true, silent = true}},
         {'n', '<leader>p', '<CMD>lua require("lspsaga.provider").lsp_finder()<CR>', {noremap = true, silent = true}},
-        {'n', '<leader>ls', '<CMD>LspStart ', {noremap = true, silent = true}},
+        {'n', '<leader>ls', ':LspStart ', {noremap = true, silent = true}},
         {'n', '<leader>ln', '<CMD>LspStop<CR>', {noremap = true, silent = true}},
         {'n', '<leader>lr', '<CMD>LspRestart<CR>', {noremap = true, silent = true}},
         {'n', '<leader>li', '<CMD>LspInfo<CR>', {noremap = true, silent = true}},
