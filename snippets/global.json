@@ -1,0 +1,7 @@
+{
+  "base filename": {
+    "prefix": "bfl",
+    "body": ["${TM_FILENAME_BASE}"],
+    "description": "File basename"
+  }
+}
