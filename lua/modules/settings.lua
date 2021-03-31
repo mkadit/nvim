@@ -96,7 +96,7 @@ local options = {
 }
 setOptions(options)
 
-vim.cmd('syntax on')
+vim.cmd('syntax enable')
 vim.cmd('colorscheme dracula')
 vim.api.nvim_exec([[
 set listchars=tab:»\ ,nbsp:␣,trail:•,extends:»,precedes:«,eol:↲

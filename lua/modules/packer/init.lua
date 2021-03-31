@@ -89,7 +89,7 @@ packer.startup(function()
     use 'sainnhe/sonokai'
     -- use 'sainnhe/edge'
     -- use 'sainnhe/gruvbox-material'
-    -- use 'nekonako/xresources-nvim'
+    use 'nekonako/xresources-nvim'
     use 'christianchiarulli/nvcode-color-schemes.vim'
 
     -- Notetaking via neuron
@@ -117,13 +117,14 @@ packer.startup(function()
     use 'windwp/nvim-ts-autotag'
 
     -- undotree
-    
+
     use 'mbbill/undotree'
     -- etc
     use 'dstein64/vim-startuptime'
     use 'airblade/vim-rooter'
     use 'andweeb/presence.nvim'
     use 'akinsho/nvim-toggleterm.lua'
+    use 'lambdalisue/suda.vim'
 
 end)
 
