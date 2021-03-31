@@ -14,7 +14,8 @@ local leader_keymap = {
         i = {'<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', 'spellcheck indo'},
         c = {'<CMD>ColorizerToggle<CR>', 'colorizer'},
         f = {'<CMD>VimadeToggle<CR>', 'fade other pane'},
-        h = {'<CMD>Cheat<CR>', 'cheatsheet'}
+        h = {'<CMD>Cheat<CR>', 'cheatsheet'},
+        u = {'<CMD>UndotreeToggle<CR>', 'undo tree'}
     },
     t = {'<CMD>Vista!!<CR>', 'tagbar'},
     n = {'<CMD>NvimTreeFindFile<CR>', 'file tree'},

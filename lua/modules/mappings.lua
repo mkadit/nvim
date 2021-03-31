@@ -7,8 +7,8 @@ local function set_keybindings()
         -- {'mode', 'keybindings', 'command', '{noremap=bool', 'silent=bool', expr=bool}}
 
         -- Disable Keys
-        {'n', 'Q', '<Nop>', {noremap = true, silent = true}}, 
-        {'n', '<C-z>', '<Nop>', {noremap = true, silent = true}}, 
+        {'n', 'Q', '<Nop>', {noremap = true, silent = true}},
+        {'n', '<C-z>', '<Nop>', {noremap = true, silent = true}},
 
 
         -- Traverse and sourcing
@@ -16,7 +16,7 @@ local function set_keybindings()
         {'n', '<Leader>ar', '<CMD>e ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}}, -- Somethign
 
         -- Find file Root
-        {'n', '<Leader>ad', '<CMD>lcd %:p:j<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>ad', '<CMD>lcd %:p:h<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>aj', '<CMD>Rooter<CR>', {noremap = true, silent = false}},
 
         -- Misc Things
@@ -26,6 +26,7 @@ local function set_keybindings()
         {'n', '<Leader>ai', '<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', {noremap = true, silent = false}}, -- resize window
         {'n', '<Leader>ac', '<CMD>ColorizerToggle<CR>', {noremap = true, silent = false}}, -- resize window
         {'n', '<Leader>af', '<CMD>VimadeToggle<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>au', '<CMD>UndotreeToggle<CR>', {noremap = true, silent = false}},
 
         -- Resizing Panes
         {'n', '<C-Left>', '<CMD>vertical resize +5<CR>', {noremap = true, silent = true}},
@@ -34,7 +35,7 @@ local function set_keybindings()
         {'n', '<C-Down>', '<CMD>resize +5<CR>', {noremap = true, silent = true}},
 
         -- Session
-        {'n', '<Leader>ss', ':SSave<Space>', {noremap = true, silent = true}}, 
+        {'n', '<Leader>ss', ':SSave<Space>', {noremap = true, silent = true}},
         {'n', '<Leader>sl', ':SLoad<Space>', {noremap = true, silent = true}},
         {'n', '<Leader>sc', '<CMD>SClose<CR>', {noremap = true, silent = true}},
         {'n', '<Leader>sd', '<CMD>SDelete<CR>', {noremap = true, silent = true}},
@@ -101,7 +102,7 @@ local function set_keybindings()
         {'n', '<Leader>v', '<CMD>Vifm<CR>', {noremap = true, silent = false}},
 
         -- Maximizing Pane
-        {'n', '<Leader>m', '<CMD>MaximizerToggle<CR>', {noremap = true, silent = false}}, 
+        {'n', '<Leader>m', '<CMD>MaximizerToggle<CR>', {noremap = true, silent = false}},
 
 
         -- LSP

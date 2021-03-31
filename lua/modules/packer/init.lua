@@ -104,17 +104,26 @@ packer.startup(function()
     -- Session and startpage
     use 'mhinz/vim-startify'
 
-    -- etc
-    use 'dstein64/vim-startuptime'
-    use 'airblade/vim-rooter'
-    use 'mattn/emmet-vim'
-
-    use 'andweeb/presence.nvim'
-
+    -- Reminder keymaps
     use {
         'AckslD/nvim-whichkey-setup.lua',
         requires = {'liuchengxu/vim-which-key'}
     }
+
+    -- emmet
+    use 'mattn/emmet-vim'
+
+    -- autotag
+    use 'windwp/nvim-ts-autotag'
+
+    -- undotree
+    
+    use 'mbbill/undotree'
+    -- etc
+    use 'dstein64/vim-startuptime'
+    use 'airblade/vim-rooter'
+    use 'andweeb/presence.nvim'
+    use 'akinsho/nvim-toggleterm.lua'
 
 end)
 

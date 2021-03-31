@@ -24,6 +24,9 @@ require('plugins.emmet')
 require('plugins.colorizer')
 require('plugins.startify')
 require('plugins.whichkey')
+require('plugins.nvimToggleterm')
+require('plugins.presenceNvim')
+require('plugins.nvimTSAutotag')
 
 -- Mappings
 require('modules.mappings')
