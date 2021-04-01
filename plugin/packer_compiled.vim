@@ -80,6 +80,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
+  ["nvim-biscuits"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-biscuits"
+  },
   ["nvim-cheat.sh"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-cheat.sh"
@@ -116,6 +120,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
@@ -149,6 +157,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/sonokai"
   },
+  ["suda.vim"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/suda.vim"
+  },
   ["tagalong.vim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/tagalong.vim"
@@ -172,6 +184,10 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  undotree = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/undotree"
   },
   ["vifm.vim"] = {
     loaded = true,
@@ -248,6 +264,10 @@ _G.packer_plugins = {
   ["webapi-vim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/webapi-vim"
+  },
+  ["xresources-nvim"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/xresources-nvim"
   }
 }
 

@@ -27,6 +27,7 @@ require('plugins.whichkey')
 require('plugins.nvimToggleterm')
 require('plugins.presenceNvim')
 require('plugins.nvimTSAutotag')
+require('plugins.nvimBiscuits')
 
 -- Mappings
 require('modules.mappings')

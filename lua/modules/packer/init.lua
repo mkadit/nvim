@@ -125,6 +125,7 @@ packer.startup(function()
     use 'andweeb/presence.nvim'
     use 'akinsho/nvim-toggleterm.lua'
     use 'lambdalisue/suda.vim'
+	use 'code-biscuits/nvim-biscuits'
 
 end)
 
