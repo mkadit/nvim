@@ -56,6 +56,7 @@ packer.startup(function()
     }
     use {"mfussenegger/nvim-jdtls"}
     use 'kabouzeid/nvim-lspinstall'
+    use 'nvim-lua/lsp_extensions.nvim'
 
     -- completion
     use {
@@ -125,7 +126,6 @@ packer.startup(function()
     use 'andweeb/presence.nvim'
     use 'akinsho/nvim-toggleterm.lua'
     use 'lambdalisue/suda.vim'
-	use 'code-biscuits/nvim-biscuits'
 
 end)
 

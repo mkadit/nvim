@@ -8,6 +8,7 @@ require('modules.packer')
 -- lsp
 require('modules.lsp')
 require('modules.lsp.efm-config')
+require('modules.lsp.lsp-extensions')
 
 -- Plugin Settings
 require('plugins.formatter')
@@ -27,7 +28,6 @@ require('plugins.whichkey')
 require('plugins.nvimToggleterm')
 require('plugins.presenceNvim')
 require('plugins.nvimTSAutotag')
-require('plugins.nvimBiscuits')
 
 -- Mappings
 require('modules.mappings')

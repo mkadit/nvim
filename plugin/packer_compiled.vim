@@ -52,6 +52,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/kommentary"
   },
+  ["lsp_extensions.nvim"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
@@ -79,10 +83,6 @@ _G.packer_plugins = {
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
-  },
-  ["nvim-biscuits"] = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-biscuits"
   },
   ["nvim-cheat.sh"] = {
     loaded = true,
