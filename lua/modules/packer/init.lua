@@ -62,7 +62,10 @@ packer.startup(function()
     use {
         "hrsh7th/nvim-compe",
         requires = {
-            {"hrsh7th/vim-vsnip", "hrsh7th/vim-vsnip-integ"} -- integration with vim-vsnip
+            {
+                "hrsh7th/vim-vsnip", "hrsh7th/vim-vsnip-integ",
+                "kristijanhusak/vim-dadbod-completion"
+            } -- integration with vim-vsnip
         }
     }
 
@@ -118,8 +121,11 @@ packer.startup(function()
     use 'windwp/nvim-ts-autotag'
 
     -- undotree
-
     use 'mbbill/undotree'
+
+    -- database
+    use {'kristijanhusak/vim-dadbod-ui', requires = {'tpope/vim-dadbod'}}
+
     -- etc
     use 'dstein64/vim-startuptime'
     use 'airblade/vim-rooter'

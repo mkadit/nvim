@@ -157,6 +157,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/sonokai"
   },
+  ["sqls.nvim"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/sqls.nvim"
+  },
   ["suda.vim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/suda.vim"
@@ -196,6 +200,14 @@ _G.packer_plugins = {
   ["vim-abolish"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-abolish"
+  },
+  ["vim-dadbod"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-dadbod"
+  },
+  ["vim-dadbod-ui"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-dadbod-ui"
   },
   ["vim-flog"] = {
     loaded = true,

@@ -10,13 +10,13 @@ local function set_keybindings()
         {'n', 'Q', '<Nop>', {noremap = true, silent = true}},
         {'n', '<C-z>', '<Nop>', {noremap = true, silent = true}},
 
-
         -- Traverse and sourcing
-        {'n', '<Leader>as', '<CMD>source ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>as', '<CMD>luafile ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ar', '<CMD>e ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}}, -- Somethign
 
         -- Find file Root
-        {'n', '<Leader>ad', '<CMD>lcd %:p:h<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>ad', '<CMD>DBUIToggle<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>aw', '<CMD>lcd %:p:h<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>aj', '<CMD>Rooter<CR>', {noremap = true, silent = false}},
 
         -- Misc Things
@@ -159,16 +159,14 @@ local function set_keybindings()
     end
 
     vim.api.nvim_exec([[
-if has('nvim-0.5')
-  augroup lsp
-    au!
-    au FileType java lua require('jdtls').start_or_attach({cmd = {'java-lsp.sh'}})
-    nnoremap ga <Cmd>lua require('jdtls').code_action()<CR>
-  augroup end
-endif
-
-]], false)
-
+    if has('nvim-0.5')
+      augroup lsp
+        au!
+        au FileType java lua require('jdtls').start_or_attach({cmd = {'java-lsp.sh'}})
+        nnoremap ga <Cmd>lua require('jdtls').code_action()<CR>
+      augroup end
+    endif
+    ]], false)
     for _, key in pairs(keybindings) do keymap(key[1], key[2], key[3], key[4]) end
 end
 vim.cmd('let mapleader=" "')
