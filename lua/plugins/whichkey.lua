@@ -6,16 +6,18 @@ local leader_keymap = {
     ['.'] = {'<CMD>lua require("telescope.builtin").file_browser()<CR>', 'filer'},
     a = {
         name = '+action',
-        s = {'<CMD>source ~/.config/nvim/init.lua<CR>', 'source init.lua'},
-        r = {'<CMD>e ~/.config/nvim/init.lua<CR>', 'edit init.lua'},
-        d = {'<CMD>lcd %:p:j<CR>', 'to current folder'},
-        j = {'<CMD>Rooter<CR>', 'to root folder'},
-        e = {'<CMD>setlocal spell! spelllang=en_gb complete+=kspell<CR>', 'spellcheck english'},
-        i = {'<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', 'spellcheck indo'},
         c = {'<CMD>ColorizerToggle<CR>', 'colorizer'},
+        d = {'<CMD>DBUIToggle<CR>', 'Database'},
+        e = {'<CMD>setlocal spell! spelllang=en_gb complete+=kspell<CR>', 'spellcheck english'},
         f = {'<CMD>VimadeToggle<CR>', 'fade other pane'},
         h = {'<CMD>Cheat<CR>', 'cheatsheet'},
-        u = {'<CMD>UndotreeToggle<CR>', 'undo tree'}
+        i = {'<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', 'spellcheck indo'},
+        j = {'<CMD>Rooter<CR>', 'to root folder'},
+        l = {'<CMD>lua vim.lsp.diagnostic.set_loclist()<CR>', 'Add file diagnostics to loclist'},
+        r = {'<CMD>e ~/.config/nvim/init.lua<CR>', 'edit init.lua'},
+        s = {'<CMD>source ~/.config/nvim/init.lua<CR>', 'source init.lua'},
+        u = {'<CMD>UndotreeToggle<CR>', 'undo tree'},
+        w = {'<CMD>lcd %:p:j<CR>', 'to current folder'}
     },
     t = {'<CMD>Vista!!<CR>', 'tagbar'},
     n = {'<CMD>NvimTreeFindFile<CR>', 'file tree'},
@@ -30,13 +32,13 @@ local leader_keymap = {
         f = {'<Cmd>lua require("telescope.builtin").find_files()<CR>', 'files'},
         g = {'<Cmd>lua require("telescope.builtin").bcommits()<CR>', 'buffer commits'},
         h = {'<Cmd>lua require("telescope.builtin").oldfiles()<CR>', 'file history'},
-        l = {'<Cmd>Telescope find_files find_command=rg,--ignore,--hidden,--file<CR>', 'hidden files'},
+        l = {'<CMD>lua require("telescope.builtin").loclist()<CR>', 'loclist'},
+        L = {'<Cmd>Telescope find_files find_command=rg,--ignore,--hidden,--file<CR>', 'hidden files'},
         m = {'<Cmd>lua require("telescope.builtin").extensions.media_files.media_files()<CR>', 'media files'},
         p = {'<Cmd>lua require("telescope.builtin").extensions.project{}<CR>', 'project'},
         q = {'<Cmd>lua require("telescope.builtin").quickfix()<CR>', 'quickfix'},
         r = {'<Cmd>lua require("telescope.builtin").live_grep()<CR>', 'ripgrep'},
         t = {'<Cmd>lua require("telescope.builtin").treesitter()<CR>', 'treesitter'},
-        w = {'<Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', 'loclist'}
     },
     g = {
         name = '+git',
@@ -75,12 +77,12 @@ local leader_keymap = {
         a = {'<CMD>bufdo BufferClose<CR>!', 'close all buffer force'},
         o = {'<CMD>BufferCloseAllButCurrent<CR>', 'close all but current buffer'}
     },
-    l={
+    l = {
         name = '+LSP',
         s = {'<CMD>LspStart ', 'start LSP <name>'},
         n = {'<CMD>LspStop<CR>', 'stop LSP'},
         i = {'<CMD>LspInfo<CR>', 'info LSP'},
-        r = {'<CMD>LspRestart<CR>', 'restart LSP'},
+        r = {'<CMD>LspRestart<CR>', 'restart LSP'}
     },
     z = {
         name = '+neuron',

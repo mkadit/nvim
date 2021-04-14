@@ -68,6 +68,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/neoformat"
   },
+  neogit = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/neogit"
+  },
   ["nerdfont.vim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nerdfont.vim"
@@ -112,10 +116,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-toggleterm.lua"
   },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
-  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
@@ -133,9 +133,8 @@ _G.packer_plugins = {
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-whichkey-setup.lua"
   },
   ["packer.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -156,10 +155,6 @@ _G.packer_plugins = {
   sonokai = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/sonokai"
-  },
-  ["sqls.nvim"] = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/sqls.nvim"
   },
   ["suda.vim"] = {
     loaded = true,
@@ -204,6 +199,10 @@ _G.packer_plugins = {
   ["vim-dadbod"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-dadbod"
+  },
+  ["vim-dadbod-completion"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-dadbod-completion"
   },
   ["vim-dadbod-ui"] = {
     loaded = true,
@@ -252,6 +251,10 @@ _G.packer_plugins = {
   ["vim-surround"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-surround"
+  },
+  ["vim-unimpaired"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-unimpaired"
   },
   ["vim-vsnip"] = {
     loaded = true,

@@ -11,7 +11,6 @@ require('lspkind').init({})
 local capability = vim.lsp.protocol.make_client_capabilities()
 capability.textDocument.completion.completionItem.snippetSupport = true
 
-
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
 local servers = {"clangd", "tsserver"}

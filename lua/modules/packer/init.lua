@@ -1,22 +1,22 @@
-vim.cmd('packadd packer.nvim')
+-- vim.cmd('packadd packer.nvim')
 
 local packer = require('packer')
 
 packer.init({display = {open_cmd = 'leftabove 80vnew [packer]'}})
 
 packer.startup(function()
-    use {'wbthomason/packer.nvim', opt = true}
+    use 'wbthomason/packer.nvim'
 
     -- Git
     use 'tpope/vim-fugitive'
     use 'tpope/vim-rhubarb'
     use 'shumphrey/fugitive-gitlab.vim'
+    use 'TimUntersberger/neogit'
 
     use 'airblade/vim-gitgutter'
     use 'rbong/vim-flog'
 
     -- Gist
-
     use {'mattn/vim-gist', requires = {'mattn/webapi-vim'}}
 
     -- Text Objects
@@ -26,6 +26,7 @@ packer.startup(function()
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
     use 'tpope/vim-abolish'
+    use 'tpope/vim-unimpaired'
     use 'wellle/targets.vim'
 
     -- Useful things
@@ -76,10 +77,10 @@ packer.startup(function()
     use 'sbdchd/neoformat'
 
     -- tree explorer
-    use {
+    --[[ use {
         'kyazdani42/nvim-tree.lua',
-        requires = {'kyazdani42/nvim-web-devicons'}
-    }
+        requires = {'kyazdani42/nvim-web-devicons'},
+    } ]]
 
     -- Aesthetics
     use {

@@ -63,13 +63,15 @@ local function set_keybindings()
         {'n', '<Leader>ff', '<CMD>lua require("telescope.builtin").find_files()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fg', '<CMD>lua require("telescope.builtin").bcommits()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fh', '<CMD>lua require("telescope.builtin").oldfiles()<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>fl', '<CMD>Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>fl', '<CMD>lua require("telescope.builtin").loclist()<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>fL', '<CMD>Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fm', '<CMD>lua require("telescope").extensions.media_files.media_files()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fp', '<CMD>lua require("telescope").extensions.project.project{}<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fq', '<CMD>lua require("telescope.builtin").quickfix()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fr', '<CMD>lua require("telescope.builtin").live_grep()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ft', '<CMD>lua require("telescope.builtin").treesitter()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gf', '<CMD>lua require("telescope.builtin").git_branches()<CR>', {noremap = true, silent = false}},
+
         -- Fugitive
         {'n', '<Leader>gs', '<CMD>G<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gD', '<CMD>Gdiffsplit<CR>', {noremap = true, silent = false}},
@@ -79,7 +81,6 @@ local function set_keybindings()
         {'n', '<Leader>gj', '<CMD>diffget //2<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gk', '<CMD>diffget //3<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gg', '<CMD>Flogsplit<CR>', {noremap = true, silent = false}},
-
 
         --- Gist
         {'n', '<Leader>Gg', '<CMD>Gist<CR>', {noremap = true, silent = false}},
@@ -113,7 +114,7 @@ local function set_keybindings()
         {'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts},
         {'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts},
         {'n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts}, {'n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts},
-        {'n', '<Leader>fw', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts},
+        {'n', '<Leader>al', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts},
         {'n', 'rk', '<CMD>lua show_documentation()<CR>', {noremap = true, silent = true}},
         {'n', '<C-j>', '<CMD>lua require("lspsaga.hover").smart_scroll_hover(1)<CR>', {noremap = true, silent = true}},
         {'n', '<C-k>', '<CMD>lua require("lspsaga.hover").smart_scroll_hover(-1)<CR>', {noremap = true, silent = true}},
@@ -122,6 +123,7 @@ local function set_keybindings()
         {'n', ']e', '<CMD>Lspsaga diagnostic_jump_next<CR>', {noremap = true, silent = true}},
         {'n', 'rn', '<CMD>lua require("lspsaga.rename").rename()<CR>', {noremap = true, silent = true}},
         {'n', 're', '<CMD>lua vim.lsp.buf.formatting()<CR>', {noremap = true, silent = true}},
+        {'v', 're', '<CMD>lua vim.lsp.buf.range_formatting()<CR>', {noremap = true, silent = true}},
         {'n', '<leader>p', '<CMD>lua require("lspsaga.provider").lsp_finder()<CR>', {noremap = true, silent = true}},
         {'n', '<leader>ls', ':LspStart ', {noremap = true, silent = true}},
         {'n', '<leader>ln', '<CMD>LspStop<CR>', {noremap = true, silent = true}},
