@@ -76,7 +76,7 @@ local function set_keybindings()
         {'n', '<Leader>gs', '<CMD>G<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gD', '<CMD>Gdiffsplit<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gb', '<CMD>Gblame<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>gp', '<CMD>Gbrowse<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>gp', '<CMD>GBrowse<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gl', '<CMD>Git log<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gj', '<CMD>diffget //2<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gk', '<CMD>diffget //3<CR>', {noremap = true, silent = false}},

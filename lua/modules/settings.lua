@@ -97,12 +97,17 @@ local options = {
 setOptions(options)
 
 vim.cmd('syntax enable')
-vim.cmd('colorscheme dracula')
+-- vim.cmd('colorscheme dracula')
 vim.api.nvim_exec([[
 set listchars=tab:»\ ,nbsp:␣,trail:•,extends:»,precedes:«,eol:↲
+if executable("rg")
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
 ]], false)
 
 vim.g.python3_host_prog = '/usr/bin/python3.9'
+require('base16-colorscheme').setup('dracula')
 
 -- vim-go
 -- vim.g.go_gopls_enabled = 0

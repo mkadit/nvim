@@ -80,13 +80,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/neuron.nvim"
   },
-  ["nvcode-color-schemes.vim"] = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvcode-color-schemes.vim"
-  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+  },
+  ["nvim-base16"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-base16"
   },
   ["nvim-cheat.sh"] = {
     loaded = true,
@@ -151,10 +151,6 @@ _G.packer_plugins = {
   ["presence.nvim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/presence.nvim"
-  },
-  sonokai = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/sonokai"
   },
   ["suda.vim"] = {
     loaded = true,
@@ -279,10 +275,6 @@ _G.packer_plugins = {
   ["webapi-vim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/webapi-vim"
-  },
-  ["xresources-nvim"] = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/xresources-nvim"
   }
 }
 

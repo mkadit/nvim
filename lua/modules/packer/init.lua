@@ -91,11 +91,11 @@ packer.startup(function()
     use 'romgrk/barbar.nvim'
     use 'liuchengxu/vista.vim'
     use 'lambdalisue/nerdfont.vim'
-    use 'sainnhe/sonokai'
+    use 'RRethy/nvim-base16'
+    -- use 'sainnhe/sonokai'
     -- use 'sainnhe/edge'
     -- use 'sainnhe/gruvbox-material'
-    use 'nekonako/xresources-nvim'
-    use 'christianchiarulli/nvcode-color-schemes.vim'
+    -- use 'nekonako/xresources-nvim'
 
     -- Notetaking via neuron
     use {
