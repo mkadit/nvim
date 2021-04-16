@@ -7,10 +7,10 @@ local leader_keymap = {
     a = {
         name = '+action',
         c = {'<CMD>ColorizerToggle<CR>', 'colorizer'},
-        d = {'<CMD>DBUIToggle<CR>', 'Database'},
+        d = {'<CMD>DogeGenerate<CR>', 'generate docs'},
+        D = {'<CMD>DBUIToggle<CR>', 'Database'},
         e = {'<CMD>setlocal spell! spelllang=en_gb complete+=kspell<CR>', 'spellcheck english'},
-        f = {'<CMD>windo diffthis<CR>', 'diff between files'},
-        F = {'<CMD>diffoff!<CR>', 'diff off'},
+        f = {'<CMD>call DiffToggle()<CR>', 'toggle diff'},
         h = {'<CMD>Cheat<CR>', 'cheatsheet'},
         i = {'<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', 'spellcheck indo'},
         j = {'<CMD>Rooter<CR>', 'to root folder'},

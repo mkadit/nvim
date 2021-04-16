@@ -100,11 +100,24 @@ require('base16-colorscheme').setup('nord')
 vim.api.nvim_exec([[
 set listchars=tab:»\ ,nbsp:␣,trail:•,extends:»,precedes:«,eol:↲
 set fillchars=eob:\ ,vert:\|
+
 if executable("rg")
     set grepprg=rg\ --vimgrep\ --no-heading
     set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
+
+let g:diff_window = 0
+function! DiffToggle()
+    if g:diff_window
+        diffoff!
+        let g:diff_window= 0
+    else
+        windo diffthis
+        let g:diff_window= 1
+    endif
+endfunction
 ]], false)
 
+vim.g.doge_enable_mappings = 0
 vim.g.gitgutter_grep = "rg"
 vim.g.python3_host_prog = '/usr/bin/python3.9'

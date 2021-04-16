@@ -15,19 +15,20 @@ local function set_keybindings()
         {'n', '<Leader>ar', '<CMD>e ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}},
 
         -- Find file Root
-        {'n', '<Leader>ad', '<CMD>DBUIToggle<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>aw', '<CMD>lcd %:p:h<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>aj', '<CMD>Rooter<CR>', {noremap = true, silent = false}},
 
         -- Misc Things
         {'t', '<ESC><ESC>', '<c-\\><c-n>', {noremap = true, silent = false}},
         {'n', '<ESC><ESC>', '<CMD>nohlsearch<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>aF', '<CMD>diffoff!<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ac', '<CMD>ColorizerToggle<CR>', {noremap = true, silent = false}}, -- resize window
         {'n', '<Leader>ae', '<CMD>setlocal spell! spelllang=en_gb complete+=kspell<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>af', '<CMD>windo diffthis<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>af', '<CMD>call DiffToggle()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ai', '<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>au', '<CMD>UndotreeToggle<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>au', '<CMD>UndotreeToggle<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>aD', '<CMD>DBUIToggle<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>ad', '<CMD>DogeGenerate<CR>', {noremap = true, silent = false}},
 
         -- Resizing Panes
         {'n', '<C-Left>', '<CMD>vertical resize +5<CR>', {noremap = true, silent = true}},

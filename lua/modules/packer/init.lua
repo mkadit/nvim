@@ -1,5 +1,4 @@
 -- vim.cmd('packadd packer.nvim')
-
 local packer = require('packer')
 
 packer.init({display = {open_cmd = 'leftabove 80vnew [packer]'}})
@@ -84,9 +83,9 @@ packer.startup(function()
     } ]]
 
     -- Aesthetics
+    use {'glepnir/galaxyline.nvim', branch = 'main'}
     use {
-        'glepnir/galaxyline.nvim',
-        branch = 'main',
+        'yamatsum/nvim-web-nonicons',
         requires = {'kyazdani42/nvim-web-devicons'}
     }
     use 'romgrk/barbar.nvim'
@@ -126,6 +125,8 @@ packer.startup(function()
     -- database
     use {'kristijanhusak/vim-dadbod-ui', requires = {'tpope/vim-dadbod'}}
 
+    -- documentation
+    use {'kkoomen/vim-doge' }
     -- etc
     use 'dstein64/vim-startuptime'
     use 'airblade/vim-rooter'

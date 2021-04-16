@@ -105,9 +105,10 @@ gls.left[4] = {
 gls.left[5] = {
     GitBranch = {
         provider = 'GitBranch',
-        separator = ' ',
+        --[[ separator = ' ',
         separator_highlight = {colors.purple, colors.bg},
-        condition = buffer_not_empty,
+        condition = buffer_not_empty, ]]
+        condition = require("galaxyline.provider_vcs").check_git_workspace,
         highlight = {colors.grey, colors.bg}
     }
 }
@@ -207,12 +208,6 @@ gls.right[3] = {
         separator = ' |',
         separator_highlight = {colors.darkblue, colors.bg},
         highlight = {colors.grey, colors.bg}
-    }
-}
-gls.right[4] = {
-    ScrollBar = {
-        provider = 'ScrollBar',
-        highlight = {colors.yellow, colors.purple}
     }
 }
 
