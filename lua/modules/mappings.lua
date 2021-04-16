@@ -12,7 +12,7 @@ local function set_keybindings()
 
         -- Traverse and sourcing
         {'n', '<Leader>as', '<CMD>luafile ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>ar', '<CMD>e ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}}, -- Somethign
+        {'n', '<Leader>ar', '<CMD>e ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}},
 
         -- Find file Root
         {'n', '<Leader>ad', '<CMD>DBUIToggle<CR>', {noremap = true, silent = false}},
@@ -22,10 +22,11 @@ local function set_keybindings()
         -- Misc Things
         {'t', '<ESC><ESC>', '<c-\\><c-n>', {noremap = true, silent = false}},
         {'n', '<ESC><ESC>', '<CMD>nohlsearch<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>ae', '<CMD>setlocal spell! spelllang=en_gb complete+=kspell<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>ai', '<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', {noremap = true, silent = false}}, -- resize window
+        {'n', '<Leader>aF', '<CMD>diffoff!<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ac', '<CMD>ColorizerToggle<CR>', {noremap = true, silent = false}}, -- resize window
-        {'n', '<Leader>af', '<CMD>VimadeToggle<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>ae', '<CMD>setlocal spell! spelllang=en_gb complete+=kspell<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>af', '<CMD>windo diffthis<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>ai', '<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>au', '<CMD>UndotreeToggle<CR>', {noremap = true, silent = false}},
 
         -- Resizing Panes
@@ -54,8 +55,7 @@ local function set_keybindings()
         -- File Tree
         {'n', '<Leader>n', '<CMD>NvimTreeFindFile<CR>', {noremap = true, silent = false}},
 
-        -- Fuzzy Finder
-
+        -- Telescope
         {'n', '<Leader>.', '<CMD>lua require("telescope.builtin").file_browser()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fa', '<CMD>lua require("telescope.builtin").autocommands()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>fb', '<CMD>lua require("telescope.builtin").buffers()<CR>', {noremap = true, silent = false}},
@@ -74,7 +74,7 @@ local function set_keybindings()
 
         -- Fugitive
         {'n', '<Leader>gs', '<CMD>G<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>gD', '<CMD>Gdiffsplit<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>gD', '<CMD>Gvdiffsplit<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gb', '<CMD>Gblame<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gp', '<CMD>GBrowse<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gl', '<CMD>Git log<CR>', {noremap = true, silent = false}},
@@ -105,7 +105,6 @@ local function set_keybindings()
         -- Maximizing Pane
         {'n', '<Leader>m', '<CMD>MaximizerToggle<CR>', {noremap = true, silent = false}},
 
-
         -- LSP
         {'n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts},
         {'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts}, {'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts},
@@ -122,23 +121,18 @@ local function set_keybindings()
         {'n', '[e', '<CMD>Lspsaga diagnostic_jump_prev<CR>', {noremap = true, silent = true}},
         {'n', ']e', '<CMD>Lspsaga diagnostic_jump_next<CR>', {noremap = true, silent = true}},
         {'n', 'rn', '<CMD>lua require("lspsaga.rename").rename()<CR>', {noremap = true, silent = true}},
-        {'n', 're', '<CMD>lua vim.lsp.buf.formatting()<CR>', {noremap = true, silent = true}},
-        {'v', 're', '<CMD>lua vim.lsp.buf.range_formatting()<CR>', {noremap = true, silent = true}},
+        {'n', '<Leader>r', '<CMD>lua vim.lsp.buf.formatting()<CR>', {noremap = true, silent = true}},
+        {'v', '<Leader>r', '<CMD>lua vim.lsp.buf.range_formatting()<CR>', {noremap = true, silent = true}},
         {'n', '<leader>p', '<CMD>lua require("lspsaga.provider").lsp_finder()<CR>', {noremap = true, silent = true}},
         {'n', '<leader>ls', ':LspStart ', {noremap = true, silent = true}},
         {'n', '<leader>ln', '<CMD>LspStop<CR>', {noremap = true, silent = true}},
         {'n', '<leader>lr', '<CMD>LspRestart<CR>', {noremap = true, silent = true}},
         {'n', '<leader>li', '<CMD>LspInfo<CR>', {noremap = true, silent = true}},
-        -- {'n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts},
-        -- {'v', 'ga', '<CMD>\'<,\'>lua require("lspsaga.codeaction").code_action()<CR>', opts},
-        -- {'n', 'ga', '<CMD>lua require("lspsaga.codeaction").code_action()<CR>', opts},
-        -- {'n', 'gD', '<CMD>lua vim.lsp.util.show_line_diagnostics()<CR>', {noremap = true, silent = true}},
 
         -- Formatter
         {'n', 'rf', '<CMD>Neoformat<CR>', {noremap = true, silent = true}},
 
         -- Neuron
-
         {'n', '<buffer><CR>', '<cmd>lua require"neuron".enter_link()<CR>', {noremap = true, silent = true}},
         {'n', '<Space>zb', '<cmd>lua require"neuron/telescope".find_backlinks()<CR>', {noremap = true, silent = true}},
         {'n', '<Space>zf', '<cmd>lua require"neuron/telescope".find_zettels()<CR>', {noremap = true, silent = true}},
@@ -148,8 +142,6 @@ local function set_keybindings()
         {'n', '<Space>zt', '<cmd>lua require"neuron/telescope".find_tags()<CR>', {noremap = true, silent = true}},
         {'n', '<buffer>gz[', '<cmd>lua require"neuron".goto_prev_extmark()<CR>', {noremap = true, silent = true}},
         {'n', '<buffer>gz]', '<cmd>lua require"neuron".goto_next_extmark()<CR>', {noremap = true, silent = true}},
-        -- {'n', '<Space>zB', '<cmd>lua require"neuron/telescope".find_backlinks{insert = true}<CR>', {noremap = true, silent = true}},
-        -- {'n', '<Space>zS', '<cmd>lua require"neuron".rib{address = "127.0.0.1:8200", verbose = true}<CR>', {noremap = true, silent = true}},
 
     }
     function _G.show_documentation()

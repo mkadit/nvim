@@ -9,7 +9,8 @@ local leader_keymap = {
         c = {'<CMD>ColorizerToggle<CR>', 'colorizer'},
         d = {'<CMD>DBUIToggle<CR>', 'Database'},
         e = {'<CMD>setlocal spell! spelllang=en_gb complete+=kspell<CR>', 'spellcheck english'},
-        f = {'<CMD>VimadeToggle<CR>', 'fade other pane'},
+        f = {'<CMD>windo diffthis<CR>', 'diff between files'},
+        F = {'<CMD>diffoff!<CR>', 'diff off'},
         h = {'<CMD>Cheat<CR>', 'cheatsheet'},
         i = {'<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', 'spellcheck indo'},
         j = {'<CMD>Rooter<CR>', 'to root folder'},
@@ -24,6 +25,7 @@ local leader_keymap = {
     m = {'<CMD>MaximizerToggle<CR>', 'maximizer'},
     p = {'<CMD>lua require("lspsaga.provider").lsp_finder()<CR>', 'lsp finder'},
     v = {'<CMD>Vifm<CR>', 'file manager'},
+    r = {'<CMD>lua vim.lsp.buf.formatting()<CR>', 'format file'},
     f = {
         name = '+find',
         a = {'<Cmd>lua require("telescope.builtin").autocommands()<CR>', 'autocommands'},
@@ -38,7 +40,7 @@ local leader_keymap = {
         p = {'<Cmd>lua require("telescope.builtin").extensions.project{}<CR>', 'project'},
         q = {'<Cmd>lua require("telescope.builtin").quickfix()<CR>', 'quickfix'},
         r = {'<Cmd>lua require("telescope.builtin").live_grep()<CR>', 'ripgrep'},
-        t = {'<Cmd>lua require("telescope.builtin").treesitter()<CR>', 'treesitter'},
+        t = {'<Cmd>lua require("telescope.builtin").treesitter()<CR>', 'treesitter'}
     },
     g = {
         name = '+git',

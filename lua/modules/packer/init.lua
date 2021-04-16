@@ -11,27 +11,28 @@ packer.startup(function()
     use 'tpope/vim-fugitive'
     use 'tpope/vim-rhubarb'
     use 'shumphrey/fugitive-gitlab.vim'
-    use 'TimUntersberger/neogit'
-
-    use 'airblade/vim-gitgutter'
     use 'rbong/vim-flog'
 
     -- Gist
     use {'mattn/vim-gist', requires = {'mattn/webapi-vim'}}
 
-    -- Text Objects
+    -- Comments
     use 'b3nj5m1n/kommentary'
+
+    -- autoopair
     use 'windwp/nvim-autopairs'
     use 'AndrewRadev/tagalong.vim'
+
+    -- Text Objects
     use 'tpope/vim-surround'
+    use 'wellle/targets.vim'
+
     use 'tpope/vim-repeat'
     use 'tpope/vim-abolish'
     use 'tpope/vim-unimpaired'
-    use 'wellle/targets.vim'
 
     -- Useful things
     use 'szw/vim-maximizer'
-    use 'TaDaa/vimade'
     use 'RishabhRD/popfix'
     use 'RishabhRD/nvim-cheat.sh'
 
@@ -66,7 +67,7 @@ packer.startup(function()
             {
                 "hrsh7th/vim-vsnip", "hrsh7th/vim-vsnip-integ",
                 "kristijanhusak/vim-dadbod-completion"
-            } -- integration with vim-vsnip
+            }
         }
     }
 
@@ -93,8 +94,6 @@ packer.startup(function()
     use 'lambdalisue/nerdfont.vim'
     use 'RRethy/nvim-base16'
     -- use 'sainnhe/sonokai'
-    -- use 'sainnhe/edge'
-    -- use 'sainnhe/gruvbox-material'
     -- use 'nekonako/xresources-nvim'
 
     -- Notetaking via neuron

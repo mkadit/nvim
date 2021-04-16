@@ -33,7 +33,7 @@ local options = {
     fileencoding   = 'utf-8',
     fileencodings  = 'utf-8',
     fileformat     = 'unix',
-    fillchars      = 'vert:┃',
+    -- fillchars      = 'vert:┃',
     foldexpr       = 'nvim_treesitter#foldexpr()',
     foldlevel      = 0,
     foldmethod     = 'manual',
@@ -50,8 +50,6 @@ local options = {
     linespace      = 0,
     list           = true,
     -- listchars      = {tab='»-»',nbsp='␣',trail='•',extends='»',precedes='«',eol='↲'},
-    -- listchars      = 'eol:↲\,tab:» ',
-    -- listchars      = 'eol:↲' .. 'tab:» ',
     mouse          = 'a',
     number         = true,
     pumblend       = 10,
@@ -97,17 +95,16 @@ local options = {
 setOptions(options)
 
 vim.cmd('syntax enable')
+require('base16-colorscheme').setup('nord')
 -- vim.cmd('colorscheme dracula')
 vim.api.nvim_exec([[
 set listchars=tab:»\ ,nbsp:␣,trail:•,extends:»,precedes:«,eol:↲
+set fillchars=eob:\ ,vert:\|
 if executable("rg")
     set grepprg=rg\ --vimgrep\ --no-heading
     set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 ]], false)
 
+vim.g.gitgutter_grep = "rg"
 vim.g.python3_host_prog = '/usr/bin/python3.9'
-require('base16-colorscheme').setup('dracula')
-
--- vim-go
--- vim.g.go_gopls_enabled = 0

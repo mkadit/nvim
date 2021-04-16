@@ -68,10 +68,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/neoformat"
   },
-  neogit = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/neogit"
-  },
   ["nerdfont.vim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nerdfont.vim"
@@ -216,10 +212,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-gist"
   },
-  ["vim-gitgutter"] = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-gitgutter"
-  },
   ["vim-maximizer"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-maximizer"
@@ -263,10 +255,6 @@ _G.packer_plugins = {
   ["vim-which-key"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-which-key"
-  },
-  vimade = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vimade"
   },
   ["vista.vim"] = {
     loaded = true,
