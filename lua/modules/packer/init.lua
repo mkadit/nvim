@@ -6,38 +6,6 @@ packer.init({display = {open_cmd = 'leftabove 80vnew [packer]'}})
 packer.startup(function()
     use 'wbthomason/packer.nvim'
 
-    -- Git
-    use 'tpope/vim-fugitive'
-    use 'tpope/vim-rhubarb'
-    use 'shumphrey/fugitive-gitlab.vim'
-    use 'rbong/vim-flog'
-
-    -- Gist
-    use {'mattn/vim-gist', requires = {'mattn/webapi-vim'}}
-
-    -- Comments
-    use 'b3nj5m1n/kommentary'
-
-    -- autoopair
-    use 'windwp/nvim-autopairs'
-    use 'AndrewRadev/tagalong.vim'
-
-    -- Text Objects
-    use 'tpope/vim-surround'
-    use 'wellle/targets.vim'
-
-    use 'tpope/vim-repeat'
-    use 'tpope/vim-abolish'
-    use 'tpope/vim-unimpaired'
-
-    -- Useful things
-    use 'szw/vim-maximizer'
-    use 'RishabhRD/popfix'
-    use 'RishabhRD/nvim-cheat.sh'
-
-    -- File Manager
-    use 'vifm/vifm.vim'
-
     -- Telescope
     use {
         'nvim-telescope/telescope.nvim',
@@ -70,8 +38,41 @@ packer.startup(function()
         }
     }
 
+    -- autoopair
+    use 'windwp/nvim-autopairs'
+    use 'AndrewRadev/tagalong.vim'
+
+
+    -- Comments
+    use 'b3nj5m1n/kommentary'
+
     -- treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+
+    -- Text Objects
+    -- use 'tpope/vim-surround'
+    use 'wellle/targets.vim'
+
+    use 'tpope/vim-repeat'
+    use 'tpope/vim-abolish'
+    use 'tpope/vim-unimpaired'
+
+    -- Git
+    use 'tpope/vim-fugitive'
+    use 'tpope/vim-rhubarb'
+    use 'shumphrey/fugitive-gitlab.vim'
+    use 'rbong/vim-flog'
+
+    -- Gist
+    use {'mattn/vim-gist', requires = {'mattn/webapi-vim'}}
+
+
+    -- Useful things
+    use 'akinsho/nvim-toggleterm.lua'
+    use 'szw/vim-maximizer'
+
+    -- File Manager
+    use 'vifm/vifm.vim'
 
     -- formatter
     use 'sbdchd/neoformat'
@@ -83,11 +84,12 @@ packer.startup(function()
     } ]]
 
     -- Aesthetics
-    use {'glepnir/galaxyline.nvim', branch = 'main'}
     use {
-        'yamatsum/nvim-web-nonicons',
-        requires = {'kyazdani42/nvim-web-devicons'}
+        'glepnir/galaxyline.nvim',
+        branch = 'main',
+        requires = 'kyazdani42/nvim-web-devicons'
     }
+
     use 'romgrk/barbar.nvim'
     use 'liuchengxu/vista.vim'
     use 'lambdalisue/nerdfont.vim'
@@ -126,13 +128,17 @@ packer.startup(function()
     use {'kristijanhusak/vim-dadbod-ui', requires = {'tpope/vim-dadbod'}}
 
     -- documentation
-    use {'kkoomen/vim-doge' }
+    use {'kkoomen/vim-doge'}
+
+    -- debugger
+    use 'mfussenegger/nvim-dap'
     -- etc
     use 'dstein64/vim-startuptime'
     use 'airblade/vim-rooter'
     use 'andweeb/presence.nvim'
-    use 'akinsho/nvim-toggleterm.lua'
     use 'lambdalisue/suda.vim'
+    use 'RishabhRD/popfix'
+    use 'RishabhRD/nvim-cheat.sh'
 
 end)
 

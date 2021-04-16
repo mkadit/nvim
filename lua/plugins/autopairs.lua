@@ -20,7 +20,7 @@ MUtils.completion_confirm = function()
     if vim.fn.pumvisible() ~= 0 then
         if vim.fn.complete_info()["selected"] ~= -1 then
             vim.fn["compe#confirm"]()
-            return npairs.esc("")
+            return npairs.esc("<c-y>")
         else
             vim.api.nvim_select_popupmenu_item(0, false, false, {})
             vim.fn["compe#confirm"]()
