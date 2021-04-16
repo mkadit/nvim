@@ -25,7 +25,7 @@ packer.startup(function()
     }
     use {"mfussenegger/nvim-jdtls"}
     use 'kabouzeid/nvim-lspinstall'
-    use 'nvim-lua/lsp_extensions.nvim'
+    use 'simrat39/rust-tools.nvim'
 
     -- completion
     use {
@@ -41,7 +41,6 @@ packer.startup(function()
     -- autoopair
     use 'windwp/nvim-autopairs'
     use 'AndrewRadev/tagalong.vim'
-
 
     -- Comments
     use 'b3nj5m1n/kommentary'
@@ -65,7 +64,6 @@ packer.startup(function()
 
     -- Gist
     use {'mattn/vim-gist', requires = {'mattn/webapi-vim'}}
-
 
     -- Useful things
     use 'akinsho/nvim-toggleterm.lua'
