@@ -49,7 +49,7 @@ packer.startup(function()
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
     -- Text Objects
-    -- use 'tpope/vim-surround'
+    use 'tpope/vim-surround'
     use 'wellle/targets.vim'
 
     use 'tpope/vim-repeat'

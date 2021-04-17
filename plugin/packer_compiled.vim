@@ -244,6 +244,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-startuptime"
   },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-surround"
+  },
   ["vim-unimpaired"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-unimpaired"

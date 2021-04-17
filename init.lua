@@ -1,9 +1,9 @@
--- General Settings
-require('modules.settings')
-
 -- Packer
 require('modules.packer.bootstrap')
 require('modules.packer')
+
+-- General Settings
+require('modules.settings')
 
 -- lsp
 require('modules.lsp')
