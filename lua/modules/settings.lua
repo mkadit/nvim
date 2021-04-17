@@ -119,5 +119,6 @@ endfunction
 ]], false)
 
 vim.g.doge_enable_mappings = 0
+vim.g.rooter_manual_only=1
 vim.g.gitgutter_grep = "rg"
 vim.g.python3_host_prog = '/usr/bin/python3.9'

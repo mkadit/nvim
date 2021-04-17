@@ -1,6 +1,6 @@
 local nvim_lsp = require('lspconfig')
 local saga = require('lspsaga')
-local lsp_completion = require('compe')
+-- local lsp_completion = require('compe')
 
 USER = vim.fn.expand('$USER')
 DATA = vim.fn.stdpath('data')
@@ -17,8 +17,8 @@ local servers = {"clangd", "tsserver"}
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         capabilities = capability,
-        root_dir = function()
-            return vim.loop.cwd()
+        root_dir = function(filename)
+            return nvim_lsp.util.root_pattern("go.mod", ".git")(filename) or nvim_lsp.util.path.dirname(filename)
         end
     }
 end
@@ -29,29 +29,28 @@ nvim_lsp.gopls.setup {
     cmd = {DATA .. "/lspinstall/go/gopls", "serve"},
     settings = {gopls = {analyses = {unusedparams = true}, staticcheck = true}},
     filetypes = {"go", "gomod"},
-    root_dir = function()
-        return vim.loop.cwd()
+    root_dir = function(filename)
+        return nvim_lsp.util.root_pattern("go.mod", ".git")(filename) or nvim_lsp.util.path.dirname(filename)
     end,
     capabilities = capability
 }
 
-nvim_lsp.pyright.setup {
-    cmd = {DATA .. "/lspinstall/python/node_modules/.bin/pyright-langserver", "--stdio"},
-    root_dir = function()
-        return vim.loop.cwd()
-    end,
-    capabilities = capability
-
-}
+nvim_lsp.pyright.setup {cmd = {DATA .. "/lspinstall/python/node_modules/.bin/pyright-langserver", "--stdio"}, capabilities = capability}
 nvim_lsp.rust_analyzer.setup({
     cmd = {DATA .. '/lspinstall/rust/rust-analyzer'},
-    capabilities = capability,
+    capabilities = (function()
+        -- for autoimports
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities.textDocument.completion.completionItem.snippetSupport = true
+        capabilities.textDocument.completion.completionItem.resolveSupport = {properties = {'documentation', 'detail', 'additionalTextEdits'}}
+        return capabilities
+    end)(),
     settings = {
-        ["rust-analyzer"] = {
+        --[[ ["rust-analyzer"] = {
             assist = {importMergeBehavior = "last", importPrefix = "by_self"},
             cargo = {loadOutDirsFromCheck = true},
             procMacro = {enable = true}
-        }
+        } ]]
     }
 })
 
@@ -88,7 +87,9 @@ nvim_lsp.html.setup {
         'vue', 'svelte'
     },
     capabilities = capability,
-    root_dir = require'lspconfig'.util.root_pattern(".git", vim.fn.getcwd())
+    root_dir = function(filename)
+        return nvim_lsp.util.root_pattern(".git")(filename) or nvim_lsp.util.path.dirname(filename)
+    end
 }
 
 local configs = require 'lspconfig/configs'
@@ -123,8 +124,8 @@ if not nvim_lsp.css then
         default_config = {
             cmd = {"node", DATA .. "/lspinstall/css/vscode-css/css-language-features/server/dist/node/cssServerMain.js", "--stdio"},
             filetypes = {'css', 'less', 'scss'},
-            root_dir = function(fname)
-                return nvim_lsp.util.find_git_ancestor(fname) or vim.loop.os_homedir()
+            root_dir = function(filename)
+                return nvim_lsp.util.root_pattern(".git")(filename) or nvim_lsp.util.path.dirname(filename)
             end,
             capabilities = capability,
             settings = {}

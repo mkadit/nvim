@@ -8,7 +8,6 @@ require('modules.settings')
 -- lsp
 require('modules.lsp')
 require('modules.lsp.efm-config')
-require('modules.lsp.lsp-extensions')
 
 -- Plugin Settings
 require('plugins.formatter')
