@@ -76,10 +76,10 @@ packer.startup(function()
     use 'sbdchd/neoformat'
 
     -- tree explorer
-    --[[ use {
+    use {
         'kyazdani42/nvim-tree.lua',
         requires = {'kyazdani42/nvim-web-devicons'},
-    } ]]
+    }
 
     -- Aesthetics
     use {
@@ -126,7 +126,7 @@ packer.startup(function()
     use {'kristijanhusak/vim-dadbod-ui', requires = {'tpope/vim-dadbod'}}
 
     -- documentation
-    use {'kkoomen/vim-doge'}
+    use {'kkoomen/vim-doge', run = ":call doge#install()"}
 
     -- debugger
     use 'mfussenegger/nvim-dap'

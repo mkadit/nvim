@@ -5,7 +5,7 @@ local saga = require('lspsaga')
 USER = vim.fn.expand('$USER')
 DATA = vim.fn.stdpath('data')
 
-saga.init_lsp_saga(opt)
+saga.init_lsp_saga()
 require('lspkind').init({})
 
 local capability = vim.lsp.protocol.make_client_capabilities()
@@ -46,11 +46,10 @@ nvim_lsp.rust_analyzer.setup({
         return capabilities
     end)(),
     settings = {
-        --[[ ["rust-analyzer"] = {
+        ["rust-analyzer"] = {
             assist = {importMergeBehavior = "last", importPrefix = "by_self"},
-            cargo = {loadOutDirsFromCheck = true},
             procMacro = {enable = true}
-        } ]]
+        }
     }
 })
 
