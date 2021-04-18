@@ -21,13 +21,21 @@ local function set_keybindings()
         -- Misc Things
         {'t', '<ESC><ESC>', '<c-\\><c-n>', {noremap = true, silent = false}},
         {'n', '<ESC><ESC>', '<CMD>nohlsearch<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>ac', '<CMD>ColorizerToggle<CR>', {noremap = true, silent = false}}, -- resize window
+
+        {'n', '<Leader>aC', '<CMD>!compiler %<CR>', {noremap = true, silent = false}}, -- resize window
+        {'n', '<Leader>aD', '<CMD>DBUIToggle<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ae', '<CMD>setlocal spell! spelllang=en_gb complete+=kspell<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>af', '<CMD>call DiffToggle()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ai', '<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>ap', '<CMD>!opout %<CR>', {noremap = true, silent = false}}, -- resize window
+
+		-- Colorizer
+        {'n', '<Leader>ac', '<CMD>ColorizerToggle<CR>', {noremap = true, silent = false}}, -- resize window
+
+		-- Undo tree
         {'n', '<Leader>au', '<CMD>UndotreeToggle<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>au', '<CMD>UndotreeToggle<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>aD', '<CMD>DBUIToggle<CR>', {noremap = true, silent = false}},
+
+		-- Document generate
         {'n', '<Leader>ad', '<CMD>DogeGenerate<CR>', {noremap = true, silent = false}},
 
         -- Resizing Panes
