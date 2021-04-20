@@ -18,7 +18,7 @@ for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         capabilities = capability,
         root_dir = function(filename)
-            return nvim_lsp.util.root_pattern("go.mod", ".git")(filename) or nvim_lsp.util.path.dirname(filename)
+            return nvim_lsp.util.root_pattern(".git")(filename) or nvim_lsp.util.path.dirname(filename)
         end
     }
 end
@@ -35,7 +35,13 @@ nvim_lsp.gopls.setup {
     capabilities = capability
 }
 
-nvim_lsp.pyright.setup {cmd = {DATA .. "/lspinstall/python/node_modules/.bin/pyright-langserver", "--stdio"}, capabilities = capability}
+nvim_lsp.pyright.setup {
+    cmd = {DATA .. "/lspinstall/python/node_modules/.bin/pyright-langserver", "--stdio"},
+    capabilities = capability,
+    root_dir = function(filename)
+        return nvim_lsp.util.root_pattern(".git")(filename) or nvim_lsp.util.path.dirname(filename)
+    end
+}
 nvim_lsp.rust_analyzer.setup({
     cmd = {DATA .. '/lspinstall/rust/rust-analyzer'},
     capabilities = (function()
@@ -45,12 +51,7 @@ nvim_lsp.rust_analyzer.setup({
         capabilities.textDocument.completion.completionItem.resolveSupport = {properties = {'documentation', 'detail', 'additionalTextEdits'}}
         return capabilities
     end)(),
-    settings = {
-        ["rust-analyzer"] = {
-            assist = {importMergeBehavior = "last", importPrefix = "by_self"},
-            procMacro = {enable = true}
-        }
-    }
+    settings = {["rust-analyzer"] = {assist = {importMergeBehavior = "last", importPrefix = "by_self"}, procMacro = {enable = true}}}
 })
 
 nvim_lsp.sumneko_lua.setup {

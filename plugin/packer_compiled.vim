@@ -14,7 +14,7 @@ try
 lua << END
   local time
   local profile_info
-  local should_profile = true
+  local should_profile = false
   if should_profile then
     local hrtime = vim.loop.hrtime
     profile_info = {}
@@ -180,12 +180,6 @@ _G.packer_plugins = {
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-whichkey-setup.lua"
   },
   ["packer.nvim"] = {
-    config = {
-      profile = {
-        enable = true,
-        threshold = 1000
-      }
-    },
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
@@ -328,9 +322,6 @@ _G.packer_plugins = {
 }
 
 time("Defining packer_plugins", false)
--- Config for: packer.nvim
-time("Config for packer.nvim", true)
-time("Config for packer.nvim", false)
 if should_profile then save_profiles() end
 
 END
