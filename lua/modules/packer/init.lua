@@ -25,7 +25,7 @@ packer.startup(function()
     }
     use {"mfussenegger/nvim-jdtls"}
     use 'kabouzeid/nvim-lspinstall'
-    use 'simrat39/rust-tools.nvim'
+
 
     -- completion
     use {
@@ -38,7 +38,7 @@ packer.startup(function()
         }
     }
 
-    -- autoopair
+    -- autopair
     use 'windwp/nvim-autopairs'
     use 'AndrewRadev/tagalong.vim'
 
@@ -47,6 +47,9 @@ packer.startup(function()
 
     -- treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+
+    -- Better quickfix
+    use 'kevinhwang91/nvim-bqf'
 
     -- Text Objects
     use 'tpope/vim-surround'
@@ -137,6 +140,7 @@ packer.startup(function()
     use 'lambdalisue/suda.vim'
     use 'RishabhRD/popfix'
     use 'RishabhRD/nvim-cheat.sh'
+    use 'famiu/nvim-reload'
 
 end)
 

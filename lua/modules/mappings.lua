@@ -12,7 +12,9 @@ local function set_keybindings()
 
         -- Traverse and sourcing
         {'n', '<Leader>as', '<CMD>luafile ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>ar', '<CMD>e ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}},
+        -- {'n', '<Leader>ar', '<CMD>e ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>ar', '<CMD>Restart<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>aR', '<CMD>Reload<CR>', {noremap = true, silent = false}},
 
         -- Find file Root
         {'n', '<Leader>aw', '<CMD>lcd %:p:h<CR>', {noremap = true, silent = false}},
@@ -22,15 +24,17 @@ local function set_keybindings()
         {'t', '<ESC><ESC>', '<c-\\><c-n>', {noremap = true, silent = false}},
         {'n', '<ESC><ESC>', '<CMD>nohlsearch<CR>', {noremap = true, silent = false}},
 
-        {'n', '<Leader>aC', '<CMD>!compiler %<CR>', {noremap = true, silent = false}}, -- resize window
+        {'n', '<Leader>aC', '<CMD>!compiler %<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>aD', '<CMD>DBUIToggle<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ae', '<CMD>setlocal spell! spelllang=en_gb complete+=kspell<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>af', '<CMD>call DiffToggle()<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ai', '<CMD>setlocal spell! spelllang=id_id complete+=kspell<CR>', {noremap = true, silent = false}},
-        {'n', '<Leader>ap', '<CMD>!opout %<CR>', {noremap = true, silent = false}}, -- resize window
+        {'n', '<Leader>ap', '<CMD>!opout %<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>aq', '<CMD>copen<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>al', '<CMD>lopen<CR>', {noremap = true, silent = false}},
 
 		-- Colorizer
-        {'n', '<Leader>ac', '<CMD>ColorizerToggle<CR>', {noremap = true, silent = false}}, -- resize window
+        {'n', '<Leader>ac', '<CMD>ColorizerToggle<CR>', {noremap = true, silent = false}},
 
 		-- Undo tree
         {'n', '<Leader>au', '<CMD>UndotreeToggle<CR>', {noremap = true, silent = false}},
@@ -123,7 +127,7 @@ local function set_keybindings()
         {'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts},
         {'n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts},
 		{'n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts},
-        {'n', '<Leader>al', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts},
+        {'n', '<Leader>aL', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts},
         {'n', 'rk', '<CMD>lua show_documentation()<CR>', {noremap = true, silent = true}},
         {'n', 'K', '<CMD>lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true}},
         {'n', '<C-j>', '<CMD>lua require("lspsaga.action").smart_scroll_with_saga(1)<CR>', {noremap = true, silent = true}},
