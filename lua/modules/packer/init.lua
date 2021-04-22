@@ -26,7 +26,6 @@ packer.startup(function()
     use {"mfussenegger/nvim-jdtls"}
     use 'kabouzeid/nvim-lspinstall'
 
-
     -- completion
     use {
         "hrsh7th/nvim-compe",
@@ -43,7 +42,13 @@ packer.startup(function()
     use 'AndrewRadev/tagalong.vim'
 
     -- Comments
-    use 'b3nj5m1n/kommentary'
+    use {
+        'b3nj5m1n/kommentary',
+        config = require('kommentary.config').configure_language("default", {
+            prefer_single_line_comments = true
+        })
+
+    }
 
     -- treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
@@ -81,7 +86,7 @@ packer.startup(function()
     -- tree explorer
     use {
         'kyazdani42/nvim-tree.lua',
-        requires = {'kyazdani42/nvim-web-devicons'},
+        requires = {'kyazdani42/nvim-web-devicons'}
     }
 
     -- Aesthetics

@@ -11,8 +11,8 @@ local function set_keybindings()
         {'n', '<C-z>', '<Nop>', {noremap = true, silent = true}},
 
         -- Traverse and sourcing
-        {'n', '<Leader>as', '<CMD>luafile ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}},
-        -- {'n', '<Leader>ar', '<CMD>e ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}},
+        -- {'n', '<Leader>as', '<CMD>luafile ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>as', '<CMD>e ~/.config/nvim/init.lua<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ar', '<CMD>Restart<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>aR', '<CMD>Reload<CR>', {noremap = true, silent = false}},
 
@@ -173,8 +173,7 @@ local function set_keybindings()
     if has('nvim-0.5')
       augroup lsp
         au!
-        au FileType java lua require('jdtls').start_or_attach({cmd = {'java-lsp.sh'}})
-        nnoremap ga <Cmd>lua require('jdtls').code_action()<CR>
+        autocmd FileType java lua require'modules.lsp.java-config'.setup()
       augroup end
     endif
     ]], false)
