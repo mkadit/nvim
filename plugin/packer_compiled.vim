@@ -159,10 +159,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-reload"
   },
-  ["nvim-toggleterm.lua"] = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-toggleterm.lua"
-  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"

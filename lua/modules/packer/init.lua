@@ -78,7 +78,7 @@ packer.startup(function()
     use {'mattn/vim-gist', requires = {'mattn/webapi-vim'}}
 
     -- Useful things
-    use 'akinsho/nvim-toggleterm.lua'
+    -- use 'akinsho/nvim-toggleterm.lua'
     use 'szw/vim-maximizer'
 
     -- File Manager

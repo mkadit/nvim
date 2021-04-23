@@ -116,6 +116,17 @@ function! DiffToggle()
         let g:diff_window= 1
     endif
 endfunction
+
+let g:term_active = 0
+function! ToggleTerm()
+	if g:term_active
+		tabnext
+	else
+		tabe | term
+	endif
+endfunction
+autocmd TermOpen * let g:term_active = 1
+autocmd TermClose * let g:term_active = 0
 ]], false)
 
 vim.g.doge_enable_mappings = 0

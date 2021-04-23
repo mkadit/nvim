@@ -23,6 +23,8 @@ local function set_keybindings()
         -- Misc Things
         {'t', '<ESC><ESC>', '<c-\\><c-n>', {noremap = true, silent = false}},
         {'n', '<ESC><ESC>', '<CMD>nohlsearch<CR>', {noremap = true, silent = false}},
+        {'n', '<C-\\>', '<CMD>call ToggleTerm()<CR>', {noremap = true, silent = false}},
+        {'t', '<C-\\>', '<CMD>call ToggleTerm()<CR>', {noremap = true, silent = false}},
 
         {'n', '<Leader>aC', '<CMD>!compiler %<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>aD', '<CMD>DBUIToggle<CR>', {noremap = true, silent = false}},
