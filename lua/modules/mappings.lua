@@ -32,6 +32,7 @@ local function set_keybindings()
         {'n', '<Leader>ap', '<CMD>!opout %<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>aq', '<CMD>copen<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>al', '<CMD>lopen<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>ax', '<CMD>LspTroubleToggle<CR>', {noremap = true, silent = false}},
 
 		-- Colorizer
         {'n', '<Leader>ac', '<CMD>ColorizerToggle<CR>', {noremap = true, silent = false}},
@@ -93,6 +94,7 @@ local function set_keybindings()
         {'n', '<Leader>gb', '<CMD>Gblame<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gp', '<CMD>GBrowse<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gl', '<CMD>Git log<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>gL', '<CMD>Glog<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gj', '<CMD>diffget //2<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gk', '<CMD>diffget //3<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>gg', '<CMD>Flogsplit<CR>', {noremap = true, silent = false}},

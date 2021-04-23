@@ -23,7 +23,8 @@ local leader_keymap = {
         r = {'<CMD>Restart<CR>', 'restart'},
         s = {'<CMD>source ~/.config/nvim/init.lua<CR>', 'source init.lua'},
         u = {'<CMD>UndotreeToggle<CR>', 'undo tree'},
-        w = {'<CMD>lcd %:p:j<CR>', 'to current folder'}
+        w = {'<CMD>lcd %:p:j<CR>', 'to current folder'},
+        x = {'<CMD>LspTroubleToggle<CR>', 'show lsp diagnostic'}
     },
     t = {'<CMD>Vista!!<CR>', 'tagbar'},
     n = {'<CMD>NvimTreeFindFile<CR>', 'file tree'},

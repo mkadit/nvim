@@ -25,6 +25,10 @@ packer.startup(function()
     }
     use {"mfussenegger/nvim-jdtls"}
     use 'kabouzeid/nvim-lspinstall'
+	use {
+	  "folke/lsp-trouble.nvim",
+	  requires = "kyazdani42/nvim-web-devicons",
+	}
 
     -- completion
     use {
@@ -101,7 +105,7 @@ packer.startup(function()
     use 'lambdalisue/nerdfont.vim'
     use 'RRethy/nvim-base16'
     -- use 'sainnhe/sonokai'
-    -- use 'nekonako/xresources-nvim'
+    use 'nekonako/xresources-nvim'
 
     -- Notetaking via neuron
     use {

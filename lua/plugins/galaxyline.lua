@@ -5,6 +5,7 @@ gl.short_line_list = {'LuaTree', 'vista', 'dbui'}
 
 local colors = {
     bg = '#282c34',
+    fg = "#D8DEE9",
     yellow = '#fabd2f',
     cyan = '#008080',
     darkblue = '#081633',
@@ -20,6 +21,7 @@ local colors = {
     lightbg = "#3C4048",
     nord = "#81A1C1",
     cream = "#EBCB8B"
+
 }
 
 local buffer_not_empty = function()
@@ -53,15 +55,15 @@ gls.left[1] = {
                 S = colors.orange,
                 [''] = colors.orange,
                 ic = colors.weed,
-                R = colors.red,
-                Rv = colors.red,
-                cv = colors.red,
-                ce = colors.red,
+                R = colors.pink,
+                Rv = colors.pink,
+                cv = colors.pink,
+                ce = colors.pink,
                 r = colors.cyan,
                 rm = colors.cyan,
                 ['r?'] = colors.cyan,
-                ['!'] = colors.red,
-                t = colors.red
+                ['!'] = colors.pink,
+                t = colors.pink
             }
             vim.api.nvim_command('hi GalaxyViMode guibg=' ..
                                      mode_color[vim.fn.mode()])
@@ -69,7 +71,7 @@ gls.left[1] = {
         end,
         separator = ' ',
         separator_highlight = {
-            colors.yellow, function()
+            colors.cream, function()
                 if not buffer_not_empty() then return colors.bg end
                 return colors.bg
             end
@@ -105,11 +107,8 @@ gls.left[4] = {
 gls.left[5] = {
     GitBranch = {
         provider = 'GitBranch',
-        --[[ separator = ' ',
-        separator_highlight = {colors.purple, colors.bg},
-        condition = buffer_not_empty, ]]
         condition = require("galaxyline.provider_vcs").check_git_workspace,
-        highlight = {colors.grey, colors.bg}
+        highlight = {colors.weed, colors.bg}
     }
 }
 
@@ -146,7 +145,7 @@ gls.left[8] = {
         -- separator = ' ',
         -- separator_highlight = {colors.purple,colors.bg},
         icon = '  ',
-        highlight = {colors.red, colors.bg}
+        highlight = {colors.pink, colors.bg}
     }
 }
 gls.left[9] = {
@@ -161,7 +160,7 @@ gls.left[10] = {
     DiagnosticError = {
         provider = 'DiagnosticError',
         icon = '  ',
-        highlight = {colors.red, colors.bg}
+        highlight = {colors.pink, colors.bg}
     }
 }
 gls.left[11] = {Space = {provider = function() return '' end}}
@@ -169,7 +168,7 @@ gls.left[12] = {
     DiagnosticWarn = {
         provider = 'DiagnosticWarn',
         icon = '  ',
-        highlight = {colors.yellow, colors.bg}
+        highlight = {colors.cream, colors.bg}
     }
 }
 gls.left[13] = {
@@ -191,7 +190,7 @@ gls.right[1] = {
         provider = 'FileFormat',
         separator = ' ',
         separator_highlight = {colors.bg, colors.bg},
-        highlight = {colors.grey, colors.bg}
+        highlight = {colors.cream, colors.bg}
     }
 }
 gls.right[2] = {
@@ -199,7 +198,7 @@ gls.right[2] = {
         provider = 'LineColumn',
         separator = ' | ',
         separator_highlight = {colors.darkblue, colors.bg},
-        highlight = {colors.grey, colors.bg}
+        highlight = {colors.nord, colors.bg}
     }
 }
 gls.right[3] = {
@@ -207,7 +206,7 @@ gls.right[3] = {
         provider = 'LinePercent',
         separator = ' |',
         separator_highlight = {colors.darkblue, colors.bg},
-        highlight = {colors.grey, colors.bg}
+        highlight = {colors.pink, colors.bg}
     }
 }
 

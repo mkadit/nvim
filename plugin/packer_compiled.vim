@@ -91,6 +91,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/kommentary"
   },
+  ["lsp-trouble.nvim"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/lsp-trouble.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
@@ -318,6 +322,10 @@ _G.packer_plugins = {
   ["webapi-vim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/webapi-vim"
+  },
+  ["xresources-nvim"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/xresources-nvim"
   }
 }
 
