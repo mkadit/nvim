@@ -1,6 +1,10 @@
 local M = {}
 function M.setup()
-    require('jdtls').start_or_attach({cmd = {'java-lsp.sh'}})
+    require('jdtls').start_or_attach({
+        cmd = {'java-lsp.sh', '/home/mkadit/workspace/' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')},
+        root_dir = require('jdtls.setup').find_root({'gradle.build', 'pom.xml'})
+    })
+
     -- Utility servers
     local map = function(type, key, value)
         vim.api.nvim_buf_set_keymap(0, type, key, value, {noremap = true, silent = true});
