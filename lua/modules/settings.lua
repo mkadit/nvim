@@ -106,6 +106,7 @@ if executable("rg")
     set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
+" Function for diff
 let g:diff_window = 0
 function! DiffToggle()
     if g:diff_window
@@ -117,16 +118,32 @@ function! DiffToggle()
     endif
 endfunction
 
+" Function for toggling terminal
 let g:term_active = 0
+let g:many_tab = 0
 function! ToggleTerm()
 	if g:term_active
-		tabnext
+        if tabpagenr('$') > 1
+            tabnext
+        else
+            tabe
+            buf term
+            call CleanEmptyBuffers()
+        endif
 	else
 		tabe | term
 	endif
 endfunction
 autocmd TermOpen * let g:term_active = 1
 autocmd TermClose * let g:term_active = 0
+
+" Function for deleting all empty buffer
+function! CleanEmptyBuffers()
+    let buffers = filter(range(1, bufnr('$')), 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val)<0 && !getbufvar(v:val, "&mod")')
+    if !empty(buffers)
+        exe 'bw ' . join(buffers, ' ')
+    endif
+endfunction
 ]], false)
 
 vim.g.doge_enable_mappings = 0

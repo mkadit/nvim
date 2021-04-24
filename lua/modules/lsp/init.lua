@@ -133,3 +133,8 @@ if not nvim_lsp.css then
     }
 end
 nvim_lsp.css.setup {}
+
+nvim_lsp.texlab.setup{
+    cmd = {DATA .. "/lspinstall/latex/texlab"}
+}
+

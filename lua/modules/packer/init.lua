@@ -102,6 +102,12 @@ packer.startup(function()
 
     use 'romgrk/barbar.nvim'
     use 'liuchengxu/vista.vim'
+-- 	use {'simrat39/symbols-outline.nvim',
+--         config = require('symbols-outline').setup({
+--             highlight_hovered_item = true,
+--             show_guides = true,
+--         })
+-- }
     use 'lambdalisue/nerdfont.vim'
     use 'RRethy/nvim-base16'
     -- use 'sainnhe/sonokai'

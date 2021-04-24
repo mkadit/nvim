@@ -21,6 +21,7 @@ local jq = {formatCommand = "jq '.'", formatStdin = true}
 local yaml_prettier = {formatCommand = "prettier ${--tab-width:tabWidth} --parser yaml", formatStdin = true}
 
 local autopep8 = {formatCommand = "autopep8 -", formatStdin = true}
+local latex = {formatCommand = "latexindent", formatStdin = true}
 
 local languages = {
     lua = {lua_efm},
@@ -32,7 +33,9 @@ local languages = {
     javascript = {eslint, denofmt},
     markdown = {markdown_prettier},
     css = {css_prettier},
-    python = {autopep8}
+    python = {autopep8},
+    tex = {latex},
+    bib = {latex},
 }
 
 nvim_lsp.efm.setup {
