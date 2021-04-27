@@ -1,5 +1,6 @@
 -- vim.cmd('packadd packer.nvim')
 local packer = require('packer')
+local use = packer.use
 
 packer.init({display = {open_cmd = 'leftabove 80vnew [packer]'}})
 
@@ -78,7 +79,6 @@ packer.startup(function()
     use {'mattn/vim-gist', requires = {'mattn/webapi-vim'}}
 
     -- Useful things
-    -- use 'akinsho/nvim-toggleterm.lua'
     use 'szw/vim-maximizer'
 
     -- File Manager
@@ -151,11 +151,11 @@ packer.startup(function()
     -- etc
     use 'dstein64/vim-startuptime'
     use 'airblade/vim-rooter'
-    use 'andweeb/presence.nvim'
     use 'lambdalisue/suda.vim'
     use 'RishabhRD/popfix'
     use 'RishabhRD/nvim-cheat.sh'
     use 'famiu/nvim-reload'
+    use 'andweeb/presence.nvim'
 
 end)
 
