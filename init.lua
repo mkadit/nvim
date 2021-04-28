@@ -9,6 +9,7 @@ require('modules.settings')
 require('modules.lsp')
 require('modules.lsp.efm-config')
 require('modules.lsp.lsp-trouble')
+require('modules.lsp.diagnostic')
 
 -- Plugin Settings
 require('plugins.autopairs')

@@ -22,7 +22,7 @@ packer.startup(function()
     -- nvim-lsp
     use {
         'neovim/nvim-lspconfig',
-        requires = {'glepnir/lspsaga.nvim', 'onsails/lspkind-nvim'}
+        requires = {'glepnir/lspsaga.nvim' }
     }
     use {"mfussenegger/nvim-jdtls"}
     use 'kabouzeid/nvim-lspinstall'
@@ -156,6 +156,7 @@ packer.startup(function()
     use 'RishabhRD/nvim-cheat.sh'
     use 'famiu/nvim-reload'
     use 'andweeb/presence.nvim'
+    use 'dhruvasagar/vim-dotoo'
 
 end)
 

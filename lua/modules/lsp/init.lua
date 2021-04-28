@@ -1,12 +1,9 @@
 local nvim_lsp = require('lspconfig')
-local saga = require('lspsaga')
 -- local lsp_completion = require('compe')
 
 USER = vim.fn.expand('$USER')
 DATA = vim.fn.stdpath('data')
 
-saga.init_lsp_saga()
-require('lspkind').init({})
 
 local capability = vim.lsp.protocol.make_client_capabilities()
 capability.textDocument.completion.completionItem.snippetSupport = true

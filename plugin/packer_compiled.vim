@@ -95,10 +95,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/lsp-trouble.nvim"
   },
-  ["lspkind-nvim"] = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
-  },
   ["lspsaga.nvim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
@@ -254,6 +250,10 @@ _G.packer_plugins = {
   ["vim-doge"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-doge"
+  },
+  ["vim-dotoo"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-dotoo"
   },
   ["vim-flog"] = {
     loaded = true,

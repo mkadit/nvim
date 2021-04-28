@@ -101,6 +101,12 @@ vim.api.nvim_exec([[
 set listchars=tab:»\ ,nbsp:␣,trail:•,extends:»,precedes:«,eol:↲
 set fillchars=eob:\ ,vert:\|
 
+
+let g:dotoo#agenda#files = ['~/Documents/todo/*.org']
+let g:dotoo#capture#refile = expand('~/Documents/todo/refile.org')
+
+autocmd BufNewFile,BufRead *.org set filetype=dotoo
+
 if executable("rg")
     set grepprg=rg\ --vimgrep\ --no-heading
     set grepformat=%f:%l:%c:%m,%f:%l:%m

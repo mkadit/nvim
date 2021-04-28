@@ -79,27 +79,29 @@ gls.left[1] = {
         highlight = {colors.lightbg, colors.bg, 'bold'}
     }
 }
-gls.left[2] = {
-    FileIcon = {
-        provider = "FileIcon",
-        condition = buffer_not_empty,
-        highlight = {
-            require("galaxyline.provider_fileinfo").get_file_icon_color,
-            colors.bg
-        }
-    }
-}
-gls.left[3] = {
-    FileName = {
-        provider = {"FileName"},
-        condition = buffer_not_empty,
-        highlight = {colors.fg, colors.bg}
-    }
-}
+-- gls.left[2] = {
+--     FileIcon = {
+--         provider = "FileIcon",
+--         condition = buffer_not_empty,
+--         highlight = {
+--             require("galaxyline.provider_fileinfo").get_file_icon_color,
+--             colors.bg
+--         }
+--     }
+-- }
+-- gls.left[3] = {
+--     FileName = {
+--         provider = {"FileName"},
+--         condition = buffer_not_empty,
+--         highlight = {colors.magenta, colors.bg}
+--     }
+-- }
 
 gls.left[4] = {
     GitIcon = {
-        provider = function() return ' ' end,
+        provider = function() return ' ' end,
+        separator = ' ',
+        separator_highlight = {'NONE', colors.bg},
         condition = buffer_not_empty,
         highlight = {colors.orange, colors.bg}
     }
@@ -216,5 +218,28 @@ gls.short_line_left[1] = {
         separator = ' ',
         separator_highlight = {colors.purple, colors.bg},
         highlight = {colors.purple, colors.bg}
+    }
+}
+
+
+gls.mid[1] = {
+    FileIcon = {
+        provider = "FileIcon",
+        condition = buffer_not_empty,
+        separator = ' ',
+        separator_highlight = {colors.purple, colors.bg},
+        highlight = {
+            require("galaxyline.provider_fileinfo").get_file_icon_color,
+            colors.bg
+        }
+    }
+}
+gls.mid[2] = {
+    FileName = {
+        provider = {"FileName"},
+        condition = buffer_not_empty,
+        separator = ' ',
+        separator_highlight = {colors.purple, colors.bg},
+        highlight = {colors.magenta, colors.bg}
     }
 }
