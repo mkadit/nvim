@@ -171,10 +171,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
-  ["nvim-whichkey-setup.lua"] = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-whichkey-setup.lua"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/packer.nvim"
@@ -214,10 +210,6 @@ _G.packer_plugins = {
   ["telescope-media-files.nvim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim"
-  },
-  ["telescope-project.nvim"] = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/telescope-project.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -307,10 +299,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
   },
-  ["vim-which-key"] = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-which-key"
-  },
   ["vista.vim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vista.vim"
@@ -319,9 +307,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/webapi-vim"
   },
-  ["xresources-nvim"] = {
+  ["which-key.nvim"] = {
     loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/xresources-nvim"
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/which-key.nvim"
   }
 }
 

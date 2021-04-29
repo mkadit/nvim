@@ -14,7 +14,6 @@ require('modules.lsp.diagnostic')
 -- Plugin Settings
 require('plugins.autopairs')
 require('plugins.barbar')
-require('plugins.colorizer')
 require('plugins.compe')
 require('plugins.emmet')
 require('plugins.formatter')

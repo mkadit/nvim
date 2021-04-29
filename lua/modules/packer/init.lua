@@ -13,23 +13,16 @@ packer.startup(function()
         requires = {
             'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-fzy-native.nvim',
-            'nvim-telescope/telescope-project.nvim',
             'nvim-telescope/telescope-media-files.nvim'
 
         }
     }
 
     -- nvim-lsp
-    use {
-        'neovim/nvim-lspconfig',
-        requires = {'glepnir/lspsaga.nvim' }
-    }
+    use {'neovim/nvim-lspconfig', requires = {'glepnir/lspsaga.nvim'}}
     use {"mfussenegger/nvim-jdtls"}
     use 'kabouzeid/nvim-lspinstall'
-	use {
-	  "folke/lsp-trouble.nvim",
-	  requires = "kyazdani42/nvim-web-devicons",
-	}
+    use {"folke/lsp-trouble.nvim", requires = "kyazdani42/nvim-web-devicons"}
 
     -- completion
     use {
@@ -45,6 +38,9 @@ packer.startup(function()
     -- autopair
     use 'windwp/nvim-autopairs'
     use 'AndrewRadev/tagalong.vim'
+
+    -- autotag
+    use 'windwp/nvim-ts-autotag'
 
     -- Comments
     use {
@@ -102,16 +98,8 @@ packer.startup(function()
 
     use 'romgrk/barbar.nvim'
     use 'liuchengxu/vista.vim'
--- 	use {'simrat39/symbols-outline.nvim',
---         config = require('symbols-outline').setup({
---             highlight_hovered_item = true,
---             show_guides = true,
---         })
--- }
     use 'lambdalisue/nerdfont.vim'
     use 'RRethy/nvim-base16'
-    -- use 'sainnhe/sonokai'
-    use 'nekonako/xresources-nvim'
 
     -- Notetaking via neuron
     use {
@@ -120,22 +108,19 @@ packer.startup(function()
     }
 
     -- Colorizer
-    use 'norcalli/nvim-colorizer.lua'
+    use {
+        'norcalli/nvim-colorizer.lua',
+        config = require'colorizer'.setup {'css', 'javascript', 'html'}
+    }
 
     -- Session and startpage
     use 'mhinz/vim-startify'
 
-    -- Reminder keymaps
-    use {
-        'AckslD/nvim-whichkey-setup.lua',
-        requires = {'liuchengxu/vim-which-key'}
-    }
+    -- Reminder keymap
+    use 'folke/which-key.nvim'
 
     -- emmet
     use 'mattn/emmet-vim'
-
-    -- autotag
-    use 'windwp/nvim-ts-autotag'
 
     -- undotree
     use 'mbbill/undotree'
@@ -148,6 +133,7 @@ packer.startup(function()
 
     -- debugger
     use 'mfussenegger/nvim-dap'
+
     -- etc
     use 'dstein64/vim-startuptime'
     use 'airblade/vim-rooter'
