@@ -71,6 +71,10 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
+  ["TrueZen.nvim"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/TrueZen.nvim"
+  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/barbar.nvim"
@@ -223,10 +227,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vifm.vim"
   },
-  ["vim-abolish"] = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-abolish"
-  },
   ["vim-dadbod"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-dadbod"
@@ -258,10 +258,6 @@ _G.packer_plugins = {
   ["vim-gist"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-gist"
-  },
-  ["vim-maximizer"] = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/vim-maximizer"
   },
   ["vim-repeat"] = {
     loaded = true,

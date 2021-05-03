@@ -37,10 +37,9 @@ packer.startup(function()
 
     -- autopair
     use 'windwp/nvim-autopairs'
+    use 'windwp/nvim-ts-autotag'
     use 'AndrewRadev/tagalong.vim'
 
-    -- autotag
-    use 'windwp/nvim-ts-autotag'
 
     -- Comments
     use {
@@ -54,17 +53,6 @@ packer.startup(function()
     -- treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
-    -- Better quickfix
-    use 'kevinhwang91/nvim-bqf'
-
-    -- Text Objects
-    use 'tpope/vim-surround'
-    use 'wellle/targets.vim'
-
-    use 'tpope/vim-repeat'
-    use 'tpope/vim-abolish'
-    use 'tpope/vim-unimpaired'
-
     -- Git
     use 'tpope/vim-fugitive'
     use 'tpope/vim-rhubarb'
@@ -74,11 +62,22 @@ packer.startup(function()
     -- Gist
     use {'mattn/vim-gist', requires = {'mattn/webapi-vim'}}
 
-    -- Useful things
-    use 'szw/vim-maximizer'
+    -- Better quickfix
+    use 'kevinhwang91/nvim-bqf'
+
+    -- Text Objects
+    use 'tpope/vim-surround'
+    use 'wellle/targets.vim'
+
+    -- tpope enhancement
+    use 'tpope/vim-repeat'
+    use 'tpope/vim-unimpaired'
 
     -- File Manager
     use 'vifm/vifm.vim'
+
+    -- Useful things
+    use 'kdav5758/TrueZen.nvim'
 
     -- formatter
     use 'sbdchd/neoformat'
@@ -131,18 +130,23 @@ packer.startup(function()
     -- documentation
     use {'kkoomen/vim-doge', run = ":call doge#install()"}
 
+    -- todo
+    use 'dhruvasagar/vim-dotoo'
+
     -- debugger
     use 'mfussenegger/nvim-dap'
 
+    -- rooter
+    use 'airblade/vim-rooter'
+
     -- etc
     use 'dstein64/vim-startuptime'
-    use 'airblade/vim-rooter'
     use 'lambdalisue/suda.vim'
     use 'RishabhRD/popfix'
     use 'RishabhRD/nvim-cheat.sh'
     use 'famiu/nvim-reload'
     use 'andweeb/presence.nvim'
-    use 'dhruvasagar/vim-dotoo'
+
 
 end)
 

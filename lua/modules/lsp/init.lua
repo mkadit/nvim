@@ -89,13 +89,20 @@ nvim_lsp.html.setup {
     end
 }
 
-local configs = require 'lspconfig/configs'
--- Check if it's already defined for when reloading this file.
+nvim_lsp.ccls.setup{
+            cmd = {"node", DATA .. "/lspinstall/css/vscode-css/css-language-features/server/dist/node/cssServerMain.js", "--stdio"},
+            filetypes = {'css', 'less', 'scss'},
+            root_dir = function(filename)
+                return nvim_lsp.util.root_pattern(".git")(filename) or nvim_lsp.util.path.dirname(filename)
+            end,
+            capabilities = capability,
 
--- tailwindcss language server
-if not nvim_lsp.tailwindcss then
-    configs.tailwindcss = {
-        default_config = {
+}
+
+
+local configs = require 'lspconfig/configs'
+configs.tailwindcss= {
+  default_config = {
             cmd = {"node", DATA .. '/lspinstall/tailwindcss/tailwindcss-intellisense/extension/dist/server/index.js', '--stdio'},
             filetypes = {
                 -- html
@@ -108,28 +115,9 @@ if not nvim_lsp.tailwindcss then
             root_dir = function(fname)
                 return nvim_lsp.util.find_git_ancestor(fname) or vim.loop.os_homedir()
             end,
-            settings = {}
-
-        }
-    }
-end
-nvim_lsp.tailwindcss.setup {}
-
--- css language server
-if not nvim_lsp.css then
-    configs.css = {
-        default_config = {
-            cmd = {"node", DATA .. "/lspinstall/css/vscode-css/css-language-features/server/dist/node/cssServerMain.js", "--stdio"},
-            filetypes = {'css', 'less', 'scss'},
-            root_dir = function(filename)
-                return nvim_lsp.util.root_pattern(".git")(filename) or nvim_lsp.util.path.dirname(filename)
-            end,
-            capabilities = capability,
-            settings = {}
-        }
-    }
-end
-nvim_lsp.css.setup {}
+  };
+}
+nvim_lsp.tailwindcss.setup{}
 
 nvim_lsp.texlab.setup{
     cmd = {DATA .. "/lspinstall/latex/texlab"}

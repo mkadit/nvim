@@ -65,30 +65,31 @@ local leader_keymap = {
         r = {'<CMD>Restart<CR>', 'Restart'},
         s = {'<CMD>source ~/.config/nvim/init.lua<CR>', 'Source init.lua'},
         u = {'<CMD>UndotreeToggle<CR>', 'Undo tree'},
-        w = {'<CMD>lcd %:p:j<CR>', 'To current folder'},
+        w = {'<CMD>lcd %:p:h<CR>', 'To current folder'},
         x = {'<CMD>LspTroubleToggle<CR>', 'Show lsp diagnostic'}
     },
     t = {'<CMD>Vista!!<CR>', 'Tagbar'},
     n = {'<CMD>NvimTreeFindFile<CR>', 'File tree'},
-    m = {'<CMD>MaximizerToggle<CR>', 'Maximizer'},
+    m = {'<CMD>TZFocus<CR>', 'Maximizer'},
     p = {'<CMD>lua require("lspsaga.provider").lsp_finder()<CR>', 'Lsp finder'},
     v = {'<CMD>Vifm<CR>', 'File manager'},
     r = {'<CMD>lua vim.lsp.buf.formatting()<CR>', 'Format file'},
     f = {
         name = '+find',
+        L = {'<Cmd>Telescope find_files find_command=rg,--ignore,--hidden,--file<CR>', 'Hidden files'},
         a = {'<Cmd>lua require("telescope.builtin").autocommands()<CR>', 'Autocommands'},
         b = {'<Cmd>lua require("telescope.builtin").buffers()<CR>', 'Buffers'},
         c = {'<Cmd>lua require("telescope.builtin").commits()<CR>', 'Commits'},
+        d = {'<CMD>lua require("telescope.builtin.lsp").workspace_diagnostics()<CR>', 'Workspace diagnostic'},
         f = {'<Cmd>lua require("telescope.builtin").find_files()<CR>', 'Files'},
         g = {'<Cmd>lua require("telescope.builtin").bcommits()<CR>', 'Buffer commits'},
         h = {'<Cmd>lua require("telescope.builtin").oldfiles()<CR>', 'File history'},
         l = {'<CMD>lua require("telescope.builtin").loclist()<CR>', 'Loclist'},
-        L = {'<Cmd>Telescope find_files find_command=rg,--ignore,--hidden,--file<CR>', 'Hidden files'},
         m = {'<Cmd>lua require("telescope.builtin").extensions.media_files.media_files()<CR>', 'Media files'},
-        p = {'<Cmd>lua require("telescope.builtin").extensions.project{}<CR>', 'Project'},
+        p = {'<CMD>lua require("telescope.builtin.lsp").dynamic_workspace_symbols()<CR>', 'Workspace symbols'},
         q = {'<Cmd>lua require("telescope.builtin").quickfix()<CR>', 'Quickfix'},
         r = {'<Cmd>lua require("telescope.builtin").live_grep()<CR>', 'Ripgrep'},
-        t = {'<Cmd>lua require("telescope.builtin").treesitter()<CR>', 'Treesitter'}
+        t = {'<Cmd>lua require("telescope.builtin").treesitter()<CR>', 'Treesitter'},
     },
     g = {
         name = '+git',
@@ -175,6 +176,7 @@ local brackets = {
     n = "Hunk",
     t = "Tag",
     e = "Line swap",
+    s = "Misspelled word",
     [" "] = "Add blank cursor"
 }
 
@@ -185,7 +187,6 @@ local y = {name = "+yank/toggle", o = unimpaired}
 
 add_table(right_bracket, brackets)
 add_table(left_bracket, brackets)
-add_table(y, brackets)
 
 -- Trigger
 wk.register({["<leader>"] = leader_keymap})

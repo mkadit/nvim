@@ -121,7 +121,7 @@ local function set_keybindings()
         {'n', '<Leader>v', '<CMD>Vifm<CR>', {noremap = true, silent = false}},
 
         -- Maximizing Pane
-        {'n', '<Leader>m', '<CMD>MaximizerToggle<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>m', '<CMD>TZFocus<CR>', {noremap = true, silent = false}},
 
         -- LSP
         {'n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts},
@@ -133,8 +133,8 @@ local function set_keybindings()
         {'n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts},
 		{'n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts},
         {'n', '<Leader>aL', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts},
-        {'n', 'rk', '<CMD>lua show_documentation()<CR>', {noremap = true, silent = true}},
-        {'n', 'K', '<CMD>lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true}},
+        {'n', 'K', '<CMD>lua show_documentation()<CR>', {noremap = true, silent = true}},
+        -- {'n', 'K', '<CMD>lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true}},
         {'n', '<C-j>', '<CMD>lua require("lspsaga.action").smart_scroll_with_saga(1)<CR>', {noremap = true, silent = true}},
         {'n', '<C-k>', '<CMD>lua require("lspsaga.action").smart_scroll_with_saga(-1)<CR>', {noremap = true, silent = true}},
         {'n', 'gk', '<CMD>lua require("lspsaga.provider").preview_definition()<CR>', {noremap = true, silent = true}},

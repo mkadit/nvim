@@ -25,6 +25,7 @@ require('plugins.presenceNvim')
 require('plugins.startify')
 require('plugins.telescope')
 require('plugins.treesitter')
+require('plugins.trueZen')
 require('plugins.whichkey')
 
 -- Mappings
