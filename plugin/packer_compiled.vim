@@ -131,10 +131,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-cheat.sh"
   },
-  ["nvim-colorizer.lua"] = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
-  },
   ["nvim-compe"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/nvim-compe"
@@ -195,13 +191,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/presence.nvim"
   },
+  ["rest.nvim"] = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/rest.nvim"
+  },
+  sonokai = {
+    loaded = true,
+    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/sonokai"
+  },
   ["suda.vim"] = {
     loaded = true,
     path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/suda.vim"
-  },
-  ["tagalong.vim"] = {
-    loaded = true,
-    path = "/home/mkadit/.local/share/nvim/site/pack/packer/start/tagalong.vim"
   },
   ["targets.vim"] = {
     loaded = true,

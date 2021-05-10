@@ -35,6 +35,7 @@ local function set_keybindings()
         {'n', '<Leader>aq', '<CMD>copen<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>al', '<CMD>lopen<CR>', {noremap = true, silent = false}},
         {'n', '<Leader>ax', '<CMD>LspTroubleToggle<CR>', {noremap = true, silent = false}},
+        {'n', '<Leader>aQ', "<CMD>lua require('rest-nvim').run()<CR>", {noremap = true, silent = false}},
 
 		-- Colorizer
         {'n', '<Leader>ac', '<CMD>ColorizerToggle<CR>', {noremap = true, silent = false}},

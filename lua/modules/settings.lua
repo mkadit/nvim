@@ -95,8 +95,8 @@ local options = {
 setOptions(options)
 
 vim.cmd('syntax enable')
-require('base16-colorscheme').setup('material-palenight')
--- vim.cmd('colorscheme dracula')
+require('base16-colorscheme').setup('nord')
+-- vim.cmd('colorscheme sonokai')
 vim.api.nvim_exec([[
 set listchars=tab:»\ ,nbsp:␣,trail:•,extends:»,precedes:«,eol:↲
 set fillchars=eob:\ ,vert:\|

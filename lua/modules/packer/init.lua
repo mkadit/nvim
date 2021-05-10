@@ -38,7 +38,7 @@ packer.startup(function()
     -- autopair
     use 'windwp/nvim-autopairs'
     use 'windwp/nvim-ts-autotag'
-    use 'AndrewRadev/tagalong.vim'
+    -- use 'AndrewRadev/tagalong.vim'
 
 
     -- Comments
@@ -99,6 +99,7 @@ packer.startup(function()
     use 'liuchengxu/vista.vim'
     use 'lambdalisue/nerdfont.vim'
     use 'RRethy/nvim-base16'
+	use 'sainnhe/sonokai'
 
     -- Notetaking via neuron
     use {
@@ -107,10 +108,10 @@ packer.startup(function()
     }
 
     -- Colorizer
-    use {
-        'norcalli/nvim-colorizer.lua',
-        config = require'colorizer'.setup {'css', 'javascript', 'html'}
-    }
+    -- use {
+    --     'norcalli/nvim-colorizer.lua',
+    --     config = require'colorizer'.setup {'css', 'javascript', 'html'}
+    -- }
 
     -- Session and startpage
     use 'mhinz/vim-startify'
@@ -146,6 +147,10 @@ packer.startup(function()
     use 'RishabhRD/nvim-cheat.sh'
     use 'famiu/nvim-reload'
     use 'andweeb/presence.nvim'
+	use {
+		'NTBBloodbath/rest.nvim',
+		requires = { 'nvim-lua/plenary.nvim' }
+	}
 
 
 end)

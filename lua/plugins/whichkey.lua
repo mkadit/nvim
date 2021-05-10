@@ -89,7 +89,7 @@ local leader_keymap = {
         p = {'<CMD>lua require("telescope.builtin.lsp").dynamic_workspace_symbols()<CR>', 'Workspace symbols'},
         q = {'<Cmd>lua require("telescope.builtin").quickfix()<CR>', 'Quickfix'},
         r = {'<Cmd>lua require("telescope.builtin").live_grep()<CR>', 'Ripgrep'},
-        t = {'<Cmd>lua require("telescope.builtin").treesitter()<CR>', 'Treesitter'},
+        t = {'<Cmd>lua require("telescope.builtin").treesitter()<CR>', 'Treesitter'}
     },
     g = {
         name = '+git',
@@ -180,10 +180,19 @@ local brackets = {
     [" "] = "Add blank cursor"
 }
 
-local right_bracket = {name = '+next/off'}
-local left_bracket = {name = "+prev/on", o = unimpaired}
-local y = {name = "+yank/toggle", o = unimpaired}
+local ataraxis = {
+    T = {'<cmd>TZTop<CR>', 'Toggle top'},
+    B = {'<cmd>TZBottom<CR>', 'Toggle bottom'},
+    L = {'<cmd>TZLeft<CR>', 'Toggle left'},
+    M = {'<cmd>TZMinimalist<CR>', 'Minimal'},
+    A = {'<cmd>TZAtaraxis<CR>', 'Ataraxis'}
+}
 
+add_table(unimpaired, ataraxis)
+
+local right_bracket = {name = '+next/off'}
+local left_bracket = {name = "+prev/on"}
+local y = {name = "+yank/toggle", o = unimpaired}
 
 add_table(right_bracket, brackets)
 add_table(left_bracket, brackets)
